@@ -1,0 +1,9 @@
+/bitrix/
+/upload/
+/.git/
+/.idea/
+/cgi-bin/
+/desktop_app/
+/webstat/
+/.htaccess
+/web.config
