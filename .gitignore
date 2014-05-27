@@ -5,5 +5,5 @@
 /cgi-bin/
 /desktop_app/
 /webstat/
-/.htaccess
-/web.config
+.htaccess
+web.config

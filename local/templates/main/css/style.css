@@ -1,0 +1,439 @@
+/*
+    Document   : css/style.css
+    Created on : 2014-04-28 01:57 PM
+    Author     : Aleksey
+    Description:
+    Purpose of the stylesheet follows.
+    To change this template use Tools | Templates.
+*/
+
+/* Fonts */
+
+@font-face {
+  	font-family: 'Open Sans Light';
+  	font-style: normal;
+  	font-weight: 400;
+  	src:
+		url("fonts/light/opensans-light-webfont.eot");
+	src:
+		url("fonts/light/opensans-light-webfont.eot?#iefix")format("embedded-opentype"),
+		url("fonts/light/opensans-light-webfont.woff") format("woff"),
+		url("fonts/light/opensans-light-webfont.ttf") format("truetype"),
+		url("fonts/light/opensans-light-webfont.svg#ModernHeading")format("svg")
+}
+
+@font-face {
+  	font-family: 'Open Sans';
+  	font-style: normal;
+  	font-weight: 400;
+  	src:
+		url("fonts/regular/OpenSans-Regular-webfont.eot");
+	src:
+		url("fonts/regular/OpenSans-Regular-webfont.eot?#iefix") format("embedded-opentype"),
+		url("fonts/regular/OpenSans-Regular-webfont.woff") format("woff"),
+		url("fonts/regular/OpenSans-Regular-webfont.ttf") format("truetype"),
+		url("fonts/regular/OpenSans-Regular-webfont.svg#ModernHeading")format("svg")
+}
+
+@font-face {
+  	font-family: 'Open Sans Bold';
+  	font-style: normal;
+  	font-weight: 600;
+  	src:
+		url("fonts/semibold/OpenSans-Semibold-webfont.eot");
+	src:
+		url("fonts/semibold/OpenSans-Semibold-webfont.eot?#iefix") format("embedded-opentype"),
+		url("fonts/semibold/OpenSans-Semibold-webfont.woff") format("woff"),
+		url("fonts/semibold/OpenSans-Semibold-webfont.ttf") format("truetype"),
+		url("fonts/semibold/OpenSans-Semibold-webfont.svg#ModernHeading") format("svg")
+}
+
+
+/* end Fonts */
+
+
+/* common styles */
+
+.fleft {
+    float:left;
+}
+
+.fright {
+    float:right;
+}
+
+.floatlist{
+    padding-left:0;
+}
+
+.floatlist li{
+    float:left;
+}
+
+.border_dotted_bottom {
+    border-bottom:1px dotted #a5a5a5;
+}
+
+.orange{
+    background-color:#febf3b;
+    border-radius:3px;
+    color:#ffffff;
+    padding:5px 10px;
+}
+
+.orange:hover{
+    color:#ffffff;
+}
+
+.centred_img{
+    margin: 0 auto;
+}
+
+.heading-dotted{
+    font-size:15px;
+    font-family:Open Sans Light;
+    text-align:center;
+    background:url(../img/bg/bg_head_main_page.png) repeat-x scroll left center;
+    margin:10px 0;
+}
+
+.heading-dotted span{
+    padding:10px;
+    background:#ffffff;
+}
+
+.right_padd_zero{
+    padding-right:0;
+}
+
+.left_padd_zero{
+    padding-left:0;
+}
+
+
+/* end common styles */
+
+/* header */
+
+.header {
+    background:#ffffff;
+}
+
+/* end header */
+
+
+/* top line header */
+
+.top_line a{
+    color:#303132;
+    font-size:13px;
+}
+
+.top_line ul{
+    margin-bottom:2px;
+}
+
+.top_line li {
+    margin-left:20px;
+}
+
+.favorite_link a{
+    background:url(../img/bg/heart.png) no-repeat scroll left center;
+    padding-left:15px;
+}
+
+.compare_link a{
+    background:url(../img/bg/compare.png) no-repeat scroll left center;
+    padding-left:15px;
+}
+
+
+/* end top line header */
+
+/* middle header line */
+
+.logo{
+    padding:25px 15px 25px 10px;
+}
+
+.search_cityes{
+    padding-top:35px;
+    padding-left: 8px;
+}
+
+.phone {
+    color:#4f4f4f;
+    font-size:14px;
+}
+
+.search_block input[type="text"]{
+    color:#dddddd;
+    width:200px;
+    height:22px;
+}
+
+.search_block input[type="submit"]{
+    background:url(../img/bg/search.png) no-repeat scroll center center;
+    border:0;
+    text-indent:-9999px;
+}
+
+.search_block input[type="submit"]:focus{
+    outline:0;
+}
+
+.middle_header .banner{
+    text-align:right;
+}
+
+.product_count{
+    font-size:18px;
+    color:#1d6cc7;
+}
+
+.basket{
+    border-right:1px solid #dddddd;
+    border-left:1px solid #dddddd;
+    padding-top:34px;
+    padding-bottom:15px;
+    text-align:center;
+}
+
+.basket .link_basket{
+    color:#6b6b6b;
+    font-family:Open Sans Light;
+    background:url(../img/bg/arrow_grey.png) no-repeat scroll center bottom;
+    padding-bottom:5px;
+}
+
+
+/* end middle header line */
+
+/* aside styles */
+
+.menu_head{
+    background: url(../img/bg/menu_down_arrow.png) no-repeat scroll 95% center #4c4c4c;
+    padding: 15px 15px;
+}
+
+.menu_head a{
+    color:#ffffff;
+    text-transform:uppercase;
+}
+
+.navbar-default{
+    border-radius:0;
+    border:none;
+    background:none;
+}
+
+.navbar-collapse{
+    max-height:none;
+    padding-left:0;
+    padding-right:0;
+}
+
+.navbar-toggle {
+    float:none;
+    border:0;
+    border-radius:0;
+    margin:0;
+}
+
+.menu_head.navbar-toggle:hover, .menu_head.navbar-toggle:focus, .menu_head.navbar-toggle:active{
+    background: url(../img/bg/menu_down_arrow.png) no-repeat scroll 95% center #4c4c4c;
+}
+
+.ctalog_links {
+    margin-bottom:0;
+    border-right:1px solid #f4f3f3;
+    border-bottom:1px solid #f4f3f3;
+    -webkit-box-shadow: 0 1px 5px #f4f3f3;
+            box-shadow: 0 1px 5px #f4f3f3;
+}
+
+.ctalog_links li {
+    padding: 12px 15px;
+    position:relative;
+    background: url(../img/bg/menu_right_arrow.png) no-repeat scroll 95% center;
+}
+
+.ctalog_links li .line{
+    position:absolute;
+    width:5px;
+    left:0;
+    height:100%;
+    top:0;
+}
+
+.ctalog_links li .bottom_line{
+    position:absolute;
+    width:80%;
+    height:0;
+    bottom:0;
+    left:5%;
+}
+
+.ctalog_links a{
+    color:#000000;
+    font-size:13px;
+    text-transform:uppercase;
+}
+
+.ctalog_links li:hover .sub_levels{
+    display:block;
+}
+
+.sub_levels{
+    padding-top:15px;
+    padding-bottom:15px;
+    display:none;
+    position:absolute;
+    left:100%;
+    top:0;
+    z-index:1;
+    min-width:720px;
+    -webkit-box-shadow: 2px 2px 15px #c3c3c3;
+            box-shadow: 2px 2px 15px #c3c3c3;
+}
+
+.sub_levels ul li {
+    background:none;
+    padding:2px;
+}
+
+.sub_levels ul li.first a{
+    color:#bf0000;
+    font-size:13px;
+    text-transform:uppercase;
+}
+
+.sub_levels ul li a{
+    color:#3c3c3d;
+    font-family:Open Sans Light;
+    text-transform:lowercase;
+    font-size:12px;
+}
+
+.action{
+    text-align:center;
+    border: 1px solid #e1e0e0;
+    padding-top:15px;
+    padding-bottom:30px;
+    -webkit-box-shadow: 0 1px 10px #f4f3f3;
+            box-shadow: 0 1px 10px #f4f3f3;
+}
+
+.action .brand{
+    margin-bottom:10px;
+}
+
+.action .name{
+    margin-top:35px;
+    font-size:14px;
+    text-transform:uppercase;
+}
+
+.action .price{
+    font-size:26px;
+    font-family:Open Sans Bold;
+}
+
+.brand{
+    text-align:right;
+}
+
+
+/* end aside styles */
+
+/* content main */
+
+.main_content_block{
+    border:1px solid #e1e0e0;
+    -webkit-box-shadow: 1px 1px 15px #f4f3f3;
+            box-shadow: 1px 1px 15px #f4f3f3;
+}
+
+.product {
+    padding-bottom:20px;
+    padding-right:0;
+}
+
+.product .desc{
+    padding:10px 0 0 15px;
+}
+
+.product .price{
+    font-family:Open Sans Bold;
+    font-size:17px;
+}
+
+.product .old_price{
+    font-family:Open Sans;
+    font-size:13px;
+    text-decoration:line-through;
+}
+
+#main-slider-nav-ul, #main-slider .title, .ls-nav{
+    display:none;
+    visibility:hidden;
+}
+
+.main-slider-panel{
+    margin-bottom:0;
+}
+
+.links-slider ul{
+    margin-bottom:0;
+}
+
+.links-slider a{
+    color:#000000;
+    font-family:Open Sans Light;
+    font-size:11px;
+}
+
+.links-slider a:hover, .links-slider a:focus, .links-slider a:active{
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.currentCrossLink:before {
+    content: "";
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    bottom: -57%;
+    left: 0;
+    background: url('../img/bg/strelka_baner.png') no-repeat scroll bottom center;
+    z-index:1;
+}
+
+
+/* end content main */
+
+
+/* footer */
+
+footer{
+    background:#f4f8fb;
+    padding-top:15px; 
+    padding-bottom:15px; 
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.sp_footerblock_heading{
+    display:block;
+    font-size: 11px;
+    margin-bottom: 5px;
+    color: #6a6a6a;
+    text-transform: uppercase;
+}
+
+footer a {
+    color: #1e3274;
+    font-size: 11px;
+}
+
+/* end footer */
