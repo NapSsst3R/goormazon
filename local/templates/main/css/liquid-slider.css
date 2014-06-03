@@ -40,7 +40,7 @@
   margin: 0 10px;
 }
 .ls-responsive .liquid-slider {
-  width: 100%;
+  width: 99%;
   margin: 0;
 }
 .panel-container {
@@ -94,9 +94,7 @@
 .ls-nav .current a {
   background: #f2f2f2;
 }
-.currentCrossLink {
-  font-weight: bold;
-}
+
 .ls-nav ul {  
   padding:0;
   clear: both;

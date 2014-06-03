@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="<?=CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . '/css/style.css', true)?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.0.0/animate.min.css">
     <link rel="stylesheet" href="<?=CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . '/css/liquid-slider.css', true)?>">
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <?$APPLICATION->ShowHead();?>
 
     <script src="<?=CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . '/js/modernizr-2.6.2.min.js', true)?>"></script>
@@ -29,8 +29,20 @@
 <div class="header clearfix">
     <div class="top_line clearfix border_dotted_bottom container col-xs-12">
         <nav class="col-xs-6 visible-md visible-lg">
-            <?$APPLICATION->IncludeComponent("bitrix:menu", "top", Array(
-
+            <?$APPLICATION->IncludeComponent(
+                "bitrix:menu",
+                "top",
+                array(
+                    "ROOT_MENU_TYPE"        => "left",
+                    "MENU_CACHE_TYPE"       => "A",
+                    "MENU_CACHE_TIME"       => "3600",
+                    "MENU_CACHE_USE_GROUPS" => "Y",
+                    "MENU_CACHE_GET_VARS"   => array(),
+                    "MAX_LEVEL"             => "1",
+                    "CHILD_MENU_TYPE"       => "left",
+                    "USE_EXT"               => "N",
+                    "DELAY"                 => "N",
+                    "ALLOW_MULTI_SELECT"    => "N"
                 ),
                 false
             );?>
@@ -68,13 +80,47 @@
             <div class="col-xs-5 search_cityes">
                 <div class="cities_block col-xs-12 left_padd_zero">
                     <div class="cities_block col-xs-3 left_padd_zero"><a href="javascript:;">Москва</a></div>
-                    <div class="phone col-xs-9 left_padd_zero">(495) 646-09-83</div>
+                    <div class="phone col-xs-9 left_padd_zero"><? $APPLICATION->IncludeFile(
+                            '/inc/phone.php',
+                            array(),
+                            array('MODE' => 'html')
+                        ) ?></div>
                 </div>
                 <div class="search_block col-xs-12 left_padd_zero">
-                    <form>
-                        <input type="text" placeholder="Поиск..." value="" />
-                        <input type="submit" value="ok" />
-                    </form>
+                    <?
+                        $APPLICATION->IncludeComponent(
+                            "bitrix:search.title",
+                            "search_title",
+                            Array(
+                                "NUM_CATEGORIES"     => "1",
+                                // Количество категорий поиска
+                                "TOP_COUNT"          => "5",
+                                // Количество результатов в каждой категории
+                                "ORDER"              => "date",
+                                // Сортировка результатов
+                                "USE_LANGUAGE_GUESS" => "Y",
+                                // Включить автоопределение раскладки клавиатуры
+                                "CHECK_DATES"        => "N",
+                                // Искать только в активных по дате документах
+                                "SHOW_OTHERS"        => "N",
+                                // Показывать категорию "прочее"
+                                "PAGE"               => "#SITE_DIR#search/",
+                                // Страница выдачи результатов поиска (доступен макрос #SITE_DIR#)
+                                "CATEGORY_0_TITLE"   => "Найдено",
+                                // Название категории
+                                "CATEGORY_0"         => array( // Ограничение области поиска
+                                    0 => "no",
+                                ),
+                                "SHOW_INPUT"         => "Y",
+                                // Показывать форму ввода поискового запроса
+                                "INPUT_ID"           => "title-search-input",
+                                // ID строки ввода поискового запроса
+                                "CONTAINER_ID"       => "title-search",
+                                // ID контейнера, по ширине которого будут выводиться результаты
+                            ),
+                            false
+                        );
+                    ?>
                 </div>
             </div>
             <div class="banner col-xs-5 visible-md visible-lg">
@@ -200,3 +246,58 @@
         </div>
     </aside>
     <section class="col-md-9">
+        <?if($APPLICATION->GetCurDir()==SITE_DIR):?>
+        <?$APPLICATION->IncludeComponent("bitrix:news.list", "slideshow", Array(
+	"IBLOCK_TYPE" => "content",	// Тип информационного блока (используется только для проверки)
+	"IBLOCK_ID" => "4",	// Код информационного блока
+	"NEWS_COUNT" => "4",	// Количество новостей на странице
+	"SORT_BY1" => "ACTIVE_FROM",	// Поле для первой сортировки новостей
+	"SORT_ORDER1" => "DESC",	// Направление для первой сортировки новостей
+	"SORT_BY2" => "SORT",	// Поле для второй сортировки новостей
+	"SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
+	"FILTER_NAME" => "",	// Фильтр
+	"FIELD_CODE" => array(	// Поля
+		0 => "DETAIL_PICTURE",
+		1 => "",
+	),
+	"PROPERTY_CODE" => array(	// Свойства
+		0 => "HREF",
+		1 => "",
+	),
+	"CHECK_DATES" => "Y",	// Показывать только активные на данный момент элементы
+	"DETAIL_URL" => "",	// URL страницы детального просмотра (по умолчанию - из настроек инфоблока)
+	"AJAX_MODE" => "N",	// Включить режим AJAX
+	"AJAX_OPTION_JUMP" => "N",	// Включить прокрутку к началу компонента
+	"AJAX_OPTION_STYLE" => "Y",	// Включить подгрузку стилей
+	"AJAX_OPTION_HISTORY" => "N",	// Включить эмуляцию навигации браузера
+	"CACHE_TYPE" => "A",	// Тип кеширования
+	"CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+	"CACHE_FILTER" => "N",	// Кешировать при установленном фильтре
+	"CACHE_GROUPS" => "Y",	// Учитывать права доступа
+	"PREVIEW_TRUNCATE_LEN" => "",	// Максимальная длина анонса для вывода (только для типа текст)
+	"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
+	"SET_STATUS_404" => "N",	// Устанавливать статус 404, если не найдены элемент или раздел
+	"SET_TITLE" => "N",	// Устанавливать заголовок страницы
+	"INCLUDE_IBLOCK_INTO_CHAIN" => "N",	// Включать инфоблок в цепочку навигации
+	"ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
+	"HIDE_LINK_WHEN_NO_DETAIL" => "N",	// Скрывать ссылку, если нет детального описания
+	"PARENT_SECTION" => "",	// ID раздела
+	"PARENT_SECTION_CODE" => "",	// Код раздела
+	"INCLUDE_SUBSECTIONS" => "Y",	// Показывать элементы подразделов раздела
+	"PAGER_TEMPLATE" => ".default",	// Шаблон постраничной навигации
+	"DISPLAY_TOP_PAGER" => "N",	// Выводить над списком
+	"DISPLAY_BOTTOM_PAGER" => "N",	// Выводить под списком
+	"PAGER_TITLE" => "Новости",	// Название категорий
+	"PAGER_SHOW_ALWAYS" => "N",	// Выводить всегда
+	"PAGER_DESC_NUMBERING" => "N",	// Использовать обратную навигацию
+	"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",	// Время кеширования страниц для обратной навигации
+	"PAGER_SHOW_ALL" => "N",	// Показывать ссылку "Все"
+	"DISPLAY_DATE" => "Y",	// Выводить дату элемента
+	"DISPLAY_NAME" => "Y",	// Выводить название элемента
+	"DISPLAY_PICTURE" => "Y",	// Выводить изображение для анонса
+	"DISPLAY_PREVIEW_TEXT" => "Y",	// Выводить текст анонса
+	"AJAX_OPTION_ADDITIONAL" => "",	// Дополнительный идентификатор
+	),
+	false
+);?>
+        <?endif;?>

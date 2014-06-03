@@ -395,7 +395,6 @@
 
 .links-slider a:hover, .links-slider a:focus, .links-slider a:active{
     text-decoration:none;
-    font-weight:bold;
 }
 
 .currentCrossLink:before {
@@ -403,11 +402,20 @@
     width: 100%;
     height: 10px;
     position: absolute;
-    bottom: -57%;
+    bottom: -10px;
     left: 0;
     background: url('../img/bg/strelka_baner.png') no-repeat scroll bottom center;
     z-index:1;
 }
+
+.slideshow_main{
+    margin-top:10px;
+}
+
+.slideshow_main li, .slideshow_main a{
+    height:30px;
+}
+
 
 
 /* end content main */

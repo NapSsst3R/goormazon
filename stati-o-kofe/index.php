@@ -1,9 +1,9 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Новости");
+$APPLICATION->SetTitle("Статьи о кофе и чае");
 ?><?$APPLICATION->IncludeComponent("bitrix:news", ".default", array(
 	"IBLOCK_TYPE" => "content",
-	"IBLOCK_ID" => "3",
+	"IBLOCK_ID" => "6",
 	"NEWS_COUNT" => "20",
 	"USE_SEARCH" => "N",
 	"USE_RSS" => "N",
@@ -17,7 +17,7 @@ $APPLICATION->SetTitle("Новости");
 	"SORT_ORDER2" => "ASC",
 	"CHECK_DATES" => "Y",
 	"SEF_MODE" => "Y",
-	"SEF_FOLDER" => "/news/",
+	"SEF_FOLDER" => "/stati-o-kofe/",
 	"AJAX_MODE" => "N",
 	"AJAX_OPTION_JUMP" => "N",
 	"AJAX_OPTION_STYLE" => "Y",
