@@ -29,23 +29,21 @@
 <div class="header clearfix">
     <div class="top_line clearfix border_dotted_bottom container col-xs-12">
         <nav class="col-xs-6 visible-md visible-lg">
-            <?$APPLICATION->IncludeComponent(
-                "bitrix:menu",
-                "top",
-                array(
-                    "ROOT_MENU_TYPE"        => "left",
-                    "MENU_CACHE_TYPE"       => "A",
-                    "MENU_CACHE_TIME"       => "3600",
-                    "MENU_CACHE_USE_GROUPS" => "Y",
-                    "MENU_CACHE_GET_VARS"   => array(),
-                    "MAX_LEVEL"             => "1",
-                    "CHILD_MENU_TYPE"       => "left",
-                    "USE_EXT"               => "N",
-                    "DELAY"                 => "N",
-                    "ALLOW_MULTI_SELECT"    => "N"
-                ),
-                false
-            );?>
+            <?$APPLICATION->IncludeComponent("bitrix:menu", "top", array(
+	"ROOT_MENU_TYPE" => "top",
+	"MENU_CACHE_TYPE" => "A",
+	"MENU_CACHE_TIME" => "3600",
+	"MENU_CACHE_USE_GROUPS" => "Y",
+	"MENU_CACHE_GET_VARS" => array(
+	),
+	"MAX_LEVEL" => "1",
+	"CHILD_MENU_TYPE" => "top",
+	"USE_EXT" => "N",
+	"DELAY" => "N",
+	"ALLOW_MULTI_SELECT" => "N"
+	),
+	false
+);?>
         </nav>
         <nav class="col-xs-3 visible-md visible-lg">
             <ul class="list-unstyled floatlist">
@@ -138,99 +136,21 @@
 <div class="main_content clearfix">
     <aside class="col-md-3">
         <nav role="navigation" class="navbar navbar-default">
-            <div class="menu_head navbar-header hidden-lg hidden-md hidden-sm navbar-toggle" data-toggle="collapse" data-target="#collapse_block">
-                <a href="javascript:;">Каталог товаров</a>
-            </div>
-            <div id="collapse_block" class="collapse navbar-collapse">
-                <div class="menu_head visible-lg visible-md visible-sm"><a href="javascript:;">Каталог товаров</a></div>
-                <ul class="list-unstyled ctalog_links">
-                    <li>
-                        <span class="line" style="background-color:#a40000;"></span>
-                        <a href="javascript:;">Детские товары</a>
-                        <span class="bottom_line border_dotted_bottom"></span>
-                        <div class="sub_levels clearfix col-xs-12 hidden-xs hidden-sm" style="background:url(/upload/stat_img/src/bg_sub.jpg) no-repeat scroll right bottom #ffffff;">
-                            <ul class="list-unstyled col-xs-3">
-                                <li class="first"><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские sadasda sdas товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                            </ul>
-                            <ul class="list-unstyled col-xs-3">
-                                <li class="first"><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                            </ul>
-                            <ul class="list-unstyled col-xs-3">
-                                <li class="first"><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                            </ul>
-                            <ul class="list-unstyled col-xs-3">
-                                <li class="first"><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                                <li><a href="javascript:;">Детские товары</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="line" style="background-color:#ff4d00;"></span>
-                        <a href="javascript:;">Бытовая техника</a>
-                        <span class="bottom_line border_dotted_bottom"></span>
-                    </li>
-                    <li>
-                        <span class="line" style="background-color:#ff8a00;"></span>
-                        <a href="javascript:;">Климатическая техника</a>
-                        <span class="bottom_line border_dotted_bottom"></span>
-                    </li>
-                    <li>
-                        <span class="line" style="background-color:#ffa800;"></span>
-                        <a href="javascript:;">Тв, Аудио-Видео техника</a>
-                        <span class="bottom_line border_dotted_bottom"></span>
-                    </li>
-                    <li>
-                        <span class="line" style="background-color:#fff000;"></span>
-                        <a href="javascript:;">Фото и видео камеры</a>
-                        <span class="bottom_line border_dotted_bottom"></span>
-                    </li>
-                    <li>
-                        <span class="line" style="background-color:#d2ffff;"></span>
-                        <a href="javascript:;">Компьютеры, ноутбуки, планшеты</a>
-                        <span class="bottom_line border_dotted_bottom"></span>
-                    </li>
-                    <li>
-                        <span class="line" style="background-color:#00cfff;"></span>
-                        <a href="javascript:;">Товары для дома и дачи</a>
-                        <span class="bottom_line border_dotted_bottom"></span>
-                    </li>
-                    <li>
-                        <span class="line" style="background-color:#209fff;"></span>
-                        <a href="javascript:;">Красота и здоровье</a>
-                        <span class="bottom_line border_dotted_bottom"></span>
-                    </li>
-                    <li>
-                        <span class="line" style="background-color:#2060ff;"></span>
-                        <a href="javascript:;">Спорт и отдых</a>
-                    </li>
-                </ul>
-            </div>
+            <?$APPLICATION->IncludeComponent("bitrix:menu", "catalog_links", array(
+	"ROOT_MENU_TYPE" => "left",
+	"MENU_CACHE_TYPE" => "N",
+	"MENU_CACHE_TIME" => "3600",
+	"MENU_CACHE_USE_GROUPS" => "Y",
+	"MENU_CACHE_GET_VARS" => array(
+	),
+	"MAX_LEVEL" => "3",
+	"CHILD_MENU_TYPE" => "left",
+	"USE_EXT" => "Y",
+	"DELAY" => "N",
+	"ALLOW_MULTI_SELECT" => "N"
+	),
+	false
+);?>
         </nav>
         <div class="action col-xs-12 visible-md visible-lg">
             <div class="brand">

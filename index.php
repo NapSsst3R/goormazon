@@ -4,6 +4,6 @@ $APPLICATION->SetTitle("1С-Битрикс: Управление сайтом");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.section",
 	"",
-Array(),
-false
+	Array(
+	)
 );?><br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
