@@ -16,9 +16,10 @@
     <link rel="stylesheet" href="<?=CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . '/css/style.css', true)?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.0.0/animate.min.css">
     <link rel="stylesheet" href="<?=CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . '/css/liquid-slider.css', true)?>">
+    <link rel="stylesheet" href="<?=CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . '/css/etalage.css', true)?>">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <?$APPLICATION->ShowHead();?>
-
+    <script src="<?=CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . '/js/etalage.js', true)?>"></script>
     <script src="<?=CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . '/js/modernizr-2.6.2.min.js', true)?>"></script>
 </head>
 <body class="clearfix">
@@ -135,7 +136,7 @@
 </div>
 <div class="main_content clearfix">
     <aside class="col-md-3">
-        <nav role="navigation" class="navbar navbar-default">
+        <nav role="navigation" class="navbar navbar-default product_detail_menu_show">
             <?$APPLICATION->IncludeComponent("bitrix:menu", "catalog_links", array(
 	"ROOT_MENU_TYPE" => "left",
 	"MENU_CACHE_TYPE" => "N",
@@ -217,6 +218,12 @@
 	"DISPLAY_PICTURE" => "Y",	// Выводить изображение для анонса
 	"DISPLAY_PREVIEW_TEXT" => "Y",	// Выводить текст анонса
 	"AJAX_OPTION_ADDITIONAL" => "",	// Дополнительный идентификатор
+	),
+	false
+);?>
+        <?else:?>
+        <?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "breadcrumbs", Array(
+	
 	),
 	false
 );?>

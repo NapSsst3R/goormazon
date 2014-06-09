@@ -7,8 +7,8 @@
         >
         <a href="javascript:;">Каталог товаров</a>
     </div>
+    <div class="menu_head visible-lg visible-md visible-sm"><a href="javascript:;">Каталог товаров</a></div>
     <div id="collapse_block" class="collapse navbar-collapse">
-        <div class="menu_head visible-lg visible-md visible-sm"><a href="javascript:;">Каталог товаров</a></div>
         <ul class="list-unstyled ctalog_links">
         <?
         $previousLevel = 0;

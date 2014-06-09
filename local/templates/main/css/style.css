@@ -245,6 +245,7 @@
 }
 
 .ctalog_links {
+    background:#ffffff;
     margin-bottom:0;
     border-right:1px solid #f4f3f3;
     border-bottom:1px solid #f4f3f3;
@@ -416,7 +417,37 @@
     height:30px;
 }
 
+/* Detail product page*/
 
+.print_link {
+    color:#1d1d1d;
+    font-family: "Open Sans Light";
+    font-size:11px;
+}
+
+.print_link:hover{
+    text-decoration: none;
+}
+
+.padding_class_top{
+    padding: 10px 0 0 0;
+}
+
+.orange-text{
+    color:#ff9466;
+}
+
+a.orange-text{
+    color:#ff9466;
+    text-decoration: underline;
+}
+
+a.orange-text:hover{
+    text-decoration: none;
+    color:#ff9466;
+}
+
+/* end Detail product page*/
 
 /* end content main */
 

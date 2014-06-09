@@ -56,14 +56,7 @@
     <div class="col-md-9">
         <div class="col-md-8"></div>
         <div class="col-md-4 paymentblock">
-            <span class="sp_footerblock_heading">Мы принимаем к оплате </span>
-            <ul class="list-unstyled floatlist clearfix">
-                <li><a href="#"><img src="/upload/stat_img/src/diner.png"></a></li>
-                <li><a href="#"><img src="/upload/stat_img/src/visae.png"></a></li>
-                <li><a href="#"><img src="/upload/stat_img/src/visa.png"></a></li>
-                <li><a href="#"><img src="/upload/stat_img/src/mae.png"></a></li>
-                <li><a href="#"><img src="/upload/stat_img/src/maest.png"></a></li>
-            </ul>
+            <?$APPLICATION->IncludeFile('/inc/payment.php', array(), array('MODE'=>'html'));?>
         </div>
     </div>
 </div>
