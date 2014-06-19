@@ -15,7 +15,7 @@
     $this->setFrameMode(true);
 ?>
 <div class="clearfix">
-    <div class="col-md-4 col-lg-4 col-sm-4">
+    <div class="col-md-4 col-lg-4 col-sm-6">
         <? // echo "<pre>"; print_r($arResult); echo "</pre>";?>
         <div class="col-xs-12">
             <? if (count($arResult['MORE_PHOTO']) > 1): ?>
@@ -49,7 +49,7 @@
             <a href="javascript:;">Добавить в избранное</a>
         </div>
     </div>
-    <div class="col-md-8 col-lg-8 col-sm-8">
+    <div class="col-md-8 col-lg-8 col-sm-6">
         <div class="col-xs-12 left_padd_zero heading">
             <div class="col-xs-12 col-md-6"><h1><?= $arResult['NAME'] ?></h1></div>
             <div class="col-xs-12 col-md-6 text-right"><a class="print_link"

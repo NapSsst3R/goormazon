@@ -355,6 +355,11 @@
             box-shadow: 1px 1px 15px #f4f3f3;
 }
 
+.products{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .product {
     padding-bottom:20px;
     padding-right:0;
@@ -416,6 +421,20 @@
 .slideshow_main li, .slideshow_main a{
     height:30px;
 }
+
+/* end content main */
+
+/* list product */
+
+.out-store{
+    color:#ff0000;
+}
+
+.in-store{
+    color:#25ce18;
+}
+
+/* end list product*/
 
 /* Detail product page*/
 

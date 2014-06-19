@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("1С-Битрикс: Управление сайтом");
-require_once('/inc/index_include.php');
+require_once('inc/index_include.php');
 ?>
 <div class="main_content_block clearfix col-xs-12">
     <div class="heading-dotted col-xs-12">

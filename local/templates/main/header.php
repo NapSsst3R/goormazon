@@ -127,8 +127,15 @@
             </div>
             <div class="col-xs-2 right_padd_zero">
                 <div class="basket">
-                    <div class="basket_counter"><img src="/upload/stat_img/src/cart.png" alt="" /><span class="product_count">2</span></div>
-                    <a href="javascript:;" class="link_basket">Корзина</a>
+                    <?$APPLICATION->IncludeComponent("bitrix:sale.basket.basket.small", "top", array(
+	"PATH_TO_BASKET" => "/personal/cart/",
+	"PATH_TO_ORDER" => "/personal/order/",
+	"SHOW_DELAY" => "N",
+	"SHOW_NOTAVAIL" => "N",
+	"SHOW_SUBSCRIBE" => "N"
+	),
+	false
+);?>
                 </div>
             </div>
         </div>
