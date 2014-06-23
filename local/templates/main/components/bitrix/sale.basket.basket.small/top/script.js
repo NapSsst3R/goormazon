@@ -7,7 +7,7 @@ $(document).ready(function(){
             $('.cart-products').hide(200);
         }
     );
-    $('.remove-product').on('click', function(){
+    $(document).on( "click", '.basket .remove-product', function(){
        href = $(this).attr('href');
        id = $(this).attr('data-id');
         $.get(href, {id:id, del:'Y'}, function(){

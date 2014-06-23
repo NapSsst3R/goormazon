@@ -85,5 +85,19 @@
 <script src="js/respond.js"></script>
 <script>window.jQuery || document.write('<script src="<?=CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . '/js/jquery-1.9.0.min.js', true)?>"><\/script>')</script>
 <script src="<?=CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . '/bootstrap/js/bootstrap.js', true)?>"></script>
+<!-- Modal -->
+<div class="modal fade" id="callMe" tabindex="-1" role="dialog" aria-labelledby="callMeLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:335px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Перезвоните мне.</h4>
+            </div>
+            <div class="modal-body">
+                <iframe src="/ajax/call_us.php"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

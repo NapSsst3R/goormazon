@@ -17,6 +17,19 @@ if ($normalCount > 0):
 				<tr>
 					<td class="margin"></td>
 					<?
+                    foreach($arResult["GRID"]["HEADERS"] as $id => $arHeader){
+                        if($arHeader["id"] == "PRICE"){
+                            $priceId = $id;
+                        }
+                        if($arHeader["id"] == "QUANTITY"){
+                            $quantityId = $id;
+                            $arQuantity = $arHeader;
+                        }
+                    }
+                    $arResult["GRID"]["HEADERS"][$quantityId] = $arResult["GRID"]["HEADERS"][$priceId];
+                    $arResult["GRID"]["HEADERS"][$priceId] = $arQuantity;
+
+
 					foreach ($arResult["GRID"]["HEADERS"] as $id => $arHeader):
 
 						$arHeaders[] = $arHeader["id"];
@@ -61,7 +74,7 @@ if ($normalCount > 0):
 						<?
 						endif;
 						?>
-							<?=getColumnName($arHeader)?>
+							<?=($arHeader["id"] != "NAME")?getColumnName($arHeader):""?>
 							</td>
 					<?
 					endforeach;
@@ -276,28 +289,6 @@ if ($normalCount > 0):
 									<div class="centered">
 										<table cellspacing="0" cellpadding="0" class="counter">
 											<tr>
-												<td>
-													<?
-													$ratio = isset($arItem["MEASURE_RATIO"]) ? $arItem["MEASURE_RATIO"] : 0;
-													$max = isset($arItem["AVAILABLE_QUANTITY"]) ? "max=\"".$arItem["AVAILABLE_QUANTITY"]."\"" : "";
-													$useFloatQuantity = ($arParams["QUANTITY_FLOAT"] == "Y") ? true : false;
-													$useFloatQuantityJS = ($useFloatQuantity ? "true" : "false");
-													?>
-													<input
-														type="text"
-														size="3"
-														id="QUANTITY_INPUT_<?=$arItem["ID"]?>"
-														name="QUANTITY_INPUT_<?=$arItem["ID"]?>"
-														size="2"
-														maxlength="18"
-														min="0"
-														<?=$max?>
-														step="<?=$ratio?>"
-														style="max-width: 50px"
-														value="<?=$arItem["QUANTITY"]?>"
-														onchange="updateQuantity('QUANTITY_INPUT_<?=$arItem["ID"]?>', '<?=$arItem["ID"]?>', <?=$ratio?>, <?=$useFloatQuantityJS?>)"
-													>
-												</td>
 												<?
 												if (!isset($arItem["MEASURE_RATIO"]))
 												{
@@ -310,18 +301,32 @@ if ($normalCount > 0):
 												?>
 													<td id="basket_quantity_control">
 														<div class="basket_quantity_control">
-															<a href="javascript:void(0);" class="plus" onclick="setQuantity(<?=$arItem["ID"]?>, <?=$arItem["MEASURE_RATIO"]?>, 'up', <?=$useFloatQuantityJS?>);"></a>
-															<a href="javascript:void(0);" class="minus" onclick="setQuantity(<?=$arItem["ID"]?>, <?=$arItem["MEASURE_RATIO"]?>, 'down', <?=$useFloatQuantityJS?>);"></a>
+                                                            <?
+                                                            $ratio = isset($arItem["MEASURE_RATIO"]) ? $arItem["MEASURE_RATIO"] : 0;
+                                                            $max = isset($arItem["AVAILABLE_QUANTITY"]) ? "max=\"".$arItem["AVAILABLE_QUANTITY"]."\"" : "";
+                                                            $useFloatQuantity = ($arParams["QUANTITY_FLOAT"] == "Y") ? true : false;
+                                                            $useFloatQuantityJS = ($useFloatQuantity ? "true" : "false");
+                                                            ?>
+                                                            <a href="javascript:void(0);" class="minus" onclick="setQuantity(<?=$arItem["ID"]?>, <?=$arItem["MEASURE_RATIO"]?>, 'down', <?=$useFloatQuantityJS?>);"></a>
+                                                            <input
+                                                                type="text"
+                                                                size="3"
+                                                                id="QUANTITY_INPUT_<?=$arItem["ID"]?>"
+                                                                name="QUANTITY_INPUT_<?=$arItem["ID"]?>"
+                                                                size="2"
+                                                                maxlength="18"
+                                                                min="0"
+                                                                <?=$max?>
+                                                                step="<?=$ratio?>"
+                                                                style="max-width: 50px"
+                                                                value="<?=$arItem["QUANTITY"]?>"
+                                                                onchange="updateQuantity('QUANTITY_INPUT_<?=$arItem["ID"]?>', '<?=$arItem["ID"]?>', <?=$ratio?>, <?=$useFloatQuantityJS?>)"
+                                                                >
+                                                            <a href="javascript:void(0);" class="plus" onclick="setQuantity(<?=$arItem["ID"]?>, <?=$arItem["MEASURE_RATIO"]?>, 'up', <?=$useFloatQuantityJS?>);"></a>
 														</div>
 													</td>
 												<?
 												endif;
-												if (isset($arItem["MEASURE_TEXT"]))
-												{
-													?>
-														<td style="text-align: left"><?=$arItem["MEASURE_TEXT"]?></td>
-													<?
-												}
 												?>
 											</tr>
 										</table>
@@ -371,25 +376,32 @@ if ($normalCount > 0):
 									<span><?=getColumnName($arHeader)?>:</span>
 									<?=$arItem["WEIGHT_FORMATED"]?>
 								</td>
-							<?
+							<?elseif($arHeader["id"] == "SUM"):?>
+                                <td class="custom sum-all">
+                                    <span><?=getColumnName($arHeader)?>:</span>
+                                    <?
+                                        if ($arHeader["id"] == "SUM"):
+                                    ?>
+                                    <div id="sum_<?=$arItem["ID"]?>">
+                                        <?
+                                            endif;
+
+                                            echo $arItem[$arHeader["id"]];
+
+                                            if ($arHeader["id"] == "SUM"):
+                                        ?>
+                                    </div>
+                                <?
+                                    endif;
+                                ?>
+                                </td>
+                            <?
 							else:
 							?>
 								<td class="custom">
 									<span><?=getColumnName($arHeader)?>:</span>
 									<?
-									if ($arHeader["id"] == "SUM"):
-									?>
-										<div id="sum_<?=$arItem["ID"]?>">
-									<?
-									endif;
-
 									echo $arItem[$arHeader["id"]];
-
-									if ($arHeader["id"] == "SUM"):
-									?>
-										</div>
-									<?
-									endif;
 									?>
 								</td>
 							<?
@@ -402,10 +414,10 @@ if ($normalCount > 0):
 								<?
 								if ($bDeleteColumn):
 								?>
-									<a href="<?=str_replace("#ID#", $arItem["ID"], $arUrls["delete"])?>"><?=GetMessage("SALE_DELETE")?></a><br />
+									<a href="<?=str_replace("#ID#", $arItem["ID"], $arUrls["delete"])?>" class="glyphicon glyphicon-remove remove-product"></a><br />
 								<?
 								endif;
-								if ($bDelayColumn):
+								if ($bDelayColumn && false):
 								?>
 									<a href="<?=str_replace("#ID#", $arItem["ID"], $arUrls["delay"])?>"><?=GetMessage("SALE_DELAY")?></a>
 								<?
@@ -436,7 +448,7 @@ if ($normalCount > 0):
 
 	<div class="bx_ordercart_order_pay">
 
-		<div class="bx_ordercart_order_pay_left">
+		<div class="bx_ordercart_order_pay_right">
 			<div class="bx_ordercart_coupon">
 				<?
 				if ($arParams["HIDE_COUPON"] != "Y"):
@@ -451,8 +463,7 @@ if ($normalCount > 0):
 					}
 
 				?>
-					<span><?=GetMessage("STB_COUPON_PROMT")?></span>
-					<input type="text" id="coupon" name="COUPON" value="<?=$arResult["COUPON"]?>" onchange="enterCoupon();" size="21" class="<?=$couponClass?>">
+					<input type="text" id="coupon" name="COUPON" placeholder="<?=GetMessage("STB_COUPON_PROMT")?>" value="<?=$arResult["COUPON"]?>" onchange="enterCoupon();" size="21" class="<?=$couponClass?>">
 				<?else:?>
 					&nbsp;
 				<?endif;?>
@@ -460,7 +471,7 @@ if ($normalCount > 0):
 		</div>
 
 		<div class="bx_ordercart_order_pay_right">
-			<table class="bx_ordercart_order_sum">
+			<table class="bx_ordercart_order_sum total-sum">
 				<?if ($bWeightColumn):?>
 					<tr>
 						<td class="custom_t1"><?=GetMessage("SALE_TOTAL_WEIGHT")?></td>
@@ -503,7 +514,7 @@ if ($normalCount > 0):
 				<span><?=GetMessage("SALE_OR")?></span>
 			<?endif;?>
 
-			<a href="javascript:void(0)" onclick="checkOut();" class="checkout"><?=GetMessage("SALE_ORDER")?></a>
+			<?/*<a href="javascript:void(0)" class="btn btn-default" onclick="checkOut();" class="checkout">Пересчитать</a>*/?>
 		</div>
 	</div>
 </div>

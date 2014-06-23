@@ -37,7 +37,7 @@ $APPLICATION->SetTitle("Корзина");
 		4 => "QUANTITY",
 		5 => "SUM",
 	),
-	"PATH_TO_ORDER" => "/personal/order/make/",
+	"PATH_TO_ORDER" => "/personal/cart/",
 	"HIDE_COUPON" => "N",
 	"PRICE_VAT_SHOW_VALUE" => "N",
 	"COUNT_DISCOUNT_4_ALL_QUANTITY" => "N",

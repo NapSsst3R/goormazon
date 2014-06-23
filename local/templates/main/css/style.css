@@ -426,12 +426,74 @@
 
 /* list product */
 
+.product_line  .price{
+    font-family: "Open Sans Bold";
+    font-size: 17px;
+}
+
+.product_line .basket-button{
+    margin-top:10px;
+}
+
+.product_line{
+    margin-top:40px;
+}
+
+.product_line .name_link_list, .product_line img{
+    margin-bottom: 10px;
+}
+
 .out-store{
     color:#ff0000;
+    margin-top: 10px;
 }
 
 .in-store{
     color:#25ce18;
+    margin-top: 10px;
+}
+
+.old_price{
+    color:#9e9e9e;
+    font-size: 13px;
+    font-family: 'Open Sans';
+    text-decoration: line-through;
+}
+
+.fav_izb_block_det{
+    margin-top: 10px;
+}
+
+.fav_izb_link_det{
+    font-size: 13px;
+    font-family: "Open Sans";
+    color:#000;
+    border-bottom: 1px dotted #000;
+    text-decoration: none;
+}
+
+.fav_izb_link_det:hover{
+    text-decoration: none;
+    border-bottom: 0;
+    color:#000;
+}
+
+.square{
+    width: 15px;
+    height: 15px;
+    display: block;
+    border: 1px solid #bdbdbd;
+    font-size: 9px;
+    text-align: center;
+    vertical-align: middle;
+    float: left;
+    margin: 3px;
+    color:#666666;
+}
+
+.square.glyphicon-ok:before{
+    margin-top: 2px;
+    display: block;
 }
 
 /* end list product*/
@@ -468,6 +530,43 @@ a.orange-text:hover{
 
 /* end Detail product page*/
 
+/* basket product */
+
+.basket_quantity_control a.minus, .basket_quantity_control input{
+    float:left;
+}
+
+.basket_quantity_control a{
+    border:0;
+}
+
+.basket_quantity_control a.plus{
+    float:right;
+}
+
+.basket_quantity_control input{
+    height:23px;
+    border-right:0;
+    border-left:0;
+    border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+    text-align: center;
+}
+
+.basket_quantity_control a.plus{
+    background:url(../img/bg/plus.png) no-repeat scroll center center;
+    width: 16px;
+    height: 23px;
+}
+
+.basket_quantity_control a.minus{
+    background:url(../img/bg/minus.png) no-repeat scroll center center;
+    width: 17px;
+    height: 23px;
+}
+
+/* end basket product */
+
 /* end content main */
 
 
@@ -492,6 +591,10 @@ footer{
 footer a {
     color: #1e3274;
     font-size: 11px;
+}
+
+.modal iframe{
+    border:0;
 }
 
 /* end footer */

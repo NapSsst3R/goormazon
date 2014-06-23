@@ -56,6 +56,9 @@
                                 <span class="bottom_line border_dotted_bottom"></span>
                             <?endif;?>
                         </li>
+                        <?
+                        $previousLevel = $arItem['DEPTH_LEVEL'];
+                        ?>
                     <?else:?>
                         <li <?if ($arItem["DEPTH_LEVEL"] == 2):?>class="first"<?endif;?>><a
                                 href="<?=$arItem["LINK"]?>" <?if ($arItem["SELECTED"]):?>
@@ -96,7 +99,7 @@
         <?endforeach?>
 
         <?if ($previousLevel > 1)://close last item tags?>
-            <?=str_repeat("</ul></li>", ($previousLevel-1) );?>
+            <?=str_repeat("</ul></div></li>", ($previousLevel-1) );?>
         <?endif?>
 
         </ul>

@@ -23,12 +23,12 @@
                 </div>
                 <div class="desc col-md-7 col-xs-12">
                     <div class="name"><a href="<?= $arItem['DETAIL_PAGE_URL'] ?>"><?= $arItem['NAME'] ?></a></div>
-                    <div class="price"><?= $arItem['MIN_PRICE']['PRINT_DISCOUNT_VALUE'] ?>- <span
-                            class="old_price">3700</span></div>
+                    <div class="price"><?= $arItem['MIN_PRICE']['PRINT_DISCOUNT_VALUE'] ?>- <?if($arElement['PRICES']['Старая цена']['VALUE']>0):?><span
+                            class="old_price"><?= $arElement['PRICES']['Старая цена']['PRINT_VALUE'] ?></span><?endif;?></div>
                 </div>
             </div>
         <? endforeach; ?>
     <? else: ?>
-        echo '<p>В данной категории отсутствуют товары.</p>';
+        <?echo '<div class="col-xs-12"><p>В данной категории отсутствуют товары.</p></div>';?>
     <?endif; ?>
 </section>

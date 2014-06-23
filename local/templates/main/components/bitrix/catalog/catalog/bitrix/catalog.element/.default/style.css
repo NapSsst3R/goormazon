@@ -958,3 +958,15 @@
 .call-me:hover{
     text-decoration: none;
 }
+
+.basket_quantity_control a.plus{
+    float:left;
+}
+
+.width40{
+    width:40%;
+}
+
+.buy_button{
+    margin-top:10px;
+}

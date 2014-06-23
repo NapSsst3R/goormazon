@@ -2085,10 +2085,10 @@ $(document).ready(function () {
         zoom_area_height: 600,
         zoom_area_width: 600,
         click_to_zoom: true,
-        smallthumbs_position: 'right',
-        change_callback: function () {
+        smallthumbs_position: 'bottom',
+      /*  change_callback: function () {
             $('.etalage_thumb_active').find('.etalage_thumb_image').attr('id', class_img);
             $('.etalage_thumb_active').prev('li').find('.etalage_thumb_image').removeAttr('id')
-        }
+        }*/
     });
 });
