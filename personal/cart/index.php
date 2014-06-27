@@ -4,7 +4,7 @@ $APPLICATION->SetTitle("Корзина");
 ?> <? if($_REQUEST['ORDER_ID']>0):?>
     <?$APPLICATION->IncludeComponent(
 	"bitrix:sale.order.ajax",
-	".default",
+	"order",
 	Array(
 		"PAY_FROM_ACCOUNT" => "N",
 		"ONLY_FULL_PAY_FROM_ACCOUNT" => "N",
@@ -28,7 +28,7 @@ $APPLICATION->SetTitle("Корзина");
 		"DISPLAY_IMG_WIDTH" => "90",
 		"DISPLAY_IMG_HEIGHT" => "90"
 	)
-);?> <? else:?> <?$APPLICATION->IncludeComponent("bitrix:sale.basket.basket", "order", array(
+);?> <? else:?> <?$APPLICATION->IncludeComponent("bitrix:sale.basket.basket", ".default", array(
 	"COLUMNS_LIST" => array(
 		0 => "NAME",
 		1 => "PROPS",

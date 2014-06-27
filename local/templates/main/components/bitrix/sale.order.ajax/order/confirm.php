@@ -14,7 +14,7 @@ if (!empty($arResult["ORDER"]))
 		</tr>
 	</table>
 	<?
-	if (!empty($arResult["PAY_SYSTEM"]))
+	if (!empty($arResult["PAY_SYSTEM"]) && false)
 	{
 		?>
 		<br /><br />
