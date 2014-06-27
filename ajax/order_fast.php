@@ -238,6 +238,7 @@ $arUser = $rsUser->Fetch();
 			<? endif;?>
 			<tr>
 				<td colspan="2" align="center">
+                    <br />
 					<input type='submit' class="btn btn-default" value="Заказать" name="submit" />
 				</td>
 			</tr>

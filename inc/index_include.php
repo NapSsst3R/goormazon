@@ -1,6 +1,6 @@
 <?
     global $arrFilterNew;
-    $arrFilterNew = array('PROPERTY_OFITSIALNYY_DILER_VALUE' => 'Да');
+    $arrFilterNew = array('PROPERTY_SPETSPREDLOZHENIE_VALUE' => 'да');
     global $arrFilterSpecial;
-    $arrFilterSpecial = array('PROPERTY_OFITSIALNYY_DILER_VALUE' => 'Да');
+    $arrFilterSpecial = array('PROPERTY_KHIT_VALUE' => 'да');
 ?>

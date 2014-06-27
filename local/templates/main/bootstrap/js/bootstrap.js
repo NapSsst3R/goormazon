@@ -1960,4 +1960,28 @@ $(document).ready(function(){
         return false;
     });
 
+    $('.compare_send').on('click', function(){
+        that = $(this);
+        link = $(this).attr('href');
+        link_next = $(this).attr('data-href');
+        action = $(this).attr('data-action');
+
+        $.get(link, function(){
+            if(action=='add'){
+                that.attr('data-action', 'remove').prev('.square').addClass('glyphicon glyphicon-ok');
+            }else{
+                that.attr('data-action', 'add').prev('.square').removeClass('glyphicon glyphicon-ok');
+            }
+            that.attr('href', link_next);
+            that.attr('data-href', link);
+            $.get('/ajax/compare-list.php', function(data){
+                $('.compare_link').html(data);
+            });
+        });
+
+        return false;
+    });
+
+    $('.popover-link').popover();
+
 });

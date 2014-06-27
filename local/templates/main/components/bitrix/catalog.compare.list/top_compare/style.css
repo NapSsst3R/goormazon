@@ -1,0 +1,10 @@
+.link_compare, .link_compare:focus{
+    border:0;
+    outline: none;
+    color: #303132;
+    font-size: 13px;
+}
+
+.link_compare:hover{
+    text-decoration: underline;
+}

@@ -26,13 +26,10 @@
             <?if ($arItem["IS_PARENT"]):?>
 
                 <?if ($arItem["DEPTH_LEVEL"] == 1):?>
-                    <li><span class="line" style="background-color:#ff4d00;"></span><a
+                    <li><a
                             href="<?=$arItem["LINK"]?>"
                             class="<?if ($arItem["SELECTED"]):?>root-item-selected<?else:?>root-item<?endif?>"
                             ><?=$arItem["TEXT"]?></a>
-                        <?if($arItem['PARAMS']['LAST']!='Y'):?>
-                            <span class="bottom_line border_dotted_bottom"></span>
-                        <?endif;?>
                         <div
                             class="sub_levels clearfix col-xs-12 hidden-xs hidden-sm"
                             style="background:url(/upload/stat_img/src/bg_sub.jpg) no-repeat scroll right bottom #ffffff;">
@@ -48,13 +45,10 @@
                 <?if ($arItem["PERMISSION"] > "D"):?>
 
                     <?if ($arItem["DEPTH_LEVEL"] == 1):?>
-                        <li><span class="line" style="background-color:#ff4d00;"></span><a
+                        <li><a
                                 href="<?=$arItem["LINK"]?>"
                                 class="<?if ($arItem["SELECTED"]):?>root-item-selected<?else:?>root-item<?endif?>"
                                 ><?=$arItem["TEXT"]?></a>
-                            <?if($arItem['PARAMS']['LAST']!='Y'):?>
-                                <span class="bottom_line border_dotted_bottom"></span>
-                            <?endif;?>
                         </li>
                         <?
                         $previousLevel = $arItem['DEPTH_LEVEL'];
@@ -71,14 +65,11 @@
                 <?else:?>
 
                     <?if ($arItem["DEPTH_LEVEL"] == 1):?>
-                        <li><span class="line" style="background-color:#ff4d00;"></span><a
+                        <li><a
                                 href=""
                                 class="<?if ($arItem["SELECTED"]):?>root-item-selected<?else:?>root-item<?endif?>"
                                 title="<?=GetMessage("MENU_ITEM_ACCESS_DENIED")?>"
                                 ><?=$arItem["TEXT"]?></a>
-                            <?if($arItem['PARAMS']['LAST']!='Y'):?>
-                                <span class="bottom_line border_dotted_bottom"></span>
-                            <?endif;?>
                         </li>
                     <?else:?>
                         <li <?if ($arItem["DEPTH_LEVEL"] == 2):?>class="first"<?endif;?>><a

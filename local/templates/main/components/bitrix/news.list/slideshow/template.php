@@ -3,7 +3,7 @@
     <ul class="list-unstyled clearfix slideshow_main">
         <?foreach($arResult["ITEMS"] as $k => $arItem):?>
         <li
-            class="col-xs-3"><a
+            class="col-xs-<?=(intval(12/count($arResult["ITEMS"]))<1)?1:intval(12/count($arResult["ITEMS"]));?>"><a
                 href="#<?=$k+1?>"
                 data-liquidslider-ref="main-slider"
                 ><p><?=$arItem['NAME']?></p></a></li>

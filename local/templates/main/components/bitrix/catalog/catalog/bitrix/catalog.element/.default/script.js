@@ -2062,7 +2062,7 @@
 })(window);
 
 $(document).ready(function () {
-    $('.main_content section').addClass('col-md-12').removeClass('col-md-9');
+    $('.main_content section').addClass('col-md-12').removeClass('col-md-10');
     $('.bx_breadcrumbs').addClass('col-md-9');
     breadcrumbs = $('.bx_breadcrumbs').detach();
     $('.main_content aside').after(breadcrumbs);
@@ -2074,8 +2074,6 @@ $(document).ready(function () {
             $('#collapse_block').hide(200);
         }
     );
-
-    $('.popover-link').popover();
 
     $('#etalage').etalage({
         thumb_image_width: 281,
@@ -2091,4 +2089,23 @@ $(document).ready(function () {
             $('.etalage_thumb_active').prev('li').find('.etalage_thumb_image').removeAttr('id')
         }*/
     });
+
+    $('.fav_send').on('click', function(){
+        that = $(this);
+        link = $(this).attr('href');
+        action = $(this).attr('data-action');
+
+        $.get(link, {action:action}, function(){
+           if(action=='add'){
+               that.prev('.square').addClass('glyphicon glyphicon-ok');
+               that.attr('data-action', 'remove');
+           }else{
+               that.prev('.square').removeClass('glyphicon glyphicon-ok');
+               that.attr('data-action', 'add');
+           }
+        });
+
+        return false;
+    });
+
 });

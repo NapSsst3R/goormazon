@@ -42,7 +42,8 @@
             <div class="product_info_line col-lg-7 col-md-9 col-sm-9 col-xs-8">
                 <a class="name_link_list" href="<?=$arElement['DETAIL_PAGE_URL']?>"><?=$arElement['NAME']?></a><br />
                 <?if($arElement['PROPERTIES']['PODAROK_OPISANIE']['VALUE']):?>
-                    <img src="/upload/stat_img/src/present-icon.png" /><br />
+                <a href="javascript:;" class="popover-link" data-toggle="popover" data-placement="top" data-content="<?=$arElement['PROPERTIES']['PODAROK_OPISANIE']['VALUE']?>" data-trigger="hover">
+                    <img src="/upload/stat_img/src/present-icon.png" /></a><br />
                 <?endif;?>
                 <?=$arElement['PROPERTIES']['OPISANIE_DLYA_ANONSA']['~VALUE']?>
                 <?if($arElement['PROPERTIES']['NALICHIE']['VALUE']=='Нет'):?>
@@ -53,8 +54,7 @@
                     <p class="in-store"><img src="/upload/stat_img/src/in-store.png" /> В наличии</p>
                 <?endif;?>
                 <div class="col-xs-12 fav_izb_block_det left_padd_zero">
-                    <span class="glyphicon glyphicon-ok square"></span><a  class="fav_izb_link_det"
-                                                                           href="<?=$arElement['COMPARE_URL']?>">Добавить к сравнению</a>
+                    <span class="square"></span><a href="<?=$arElement['COMPARE_URL']?>" id="comp_<?=$arElement['ID']?>" data-action="add" data-href="<?=$APPLICATION->GetCurPageParam('action=REMOVE_FROM_COMPARE_LIST&id='.$arElement['ID'], array('action', 'id'));?>" class="fav_izb_link_det compare_send">Добавить к сравнению</a>
                 </div>
             </div>
             <div class="product_price_line col-lg-2 col-md-9 col-sm-9 col-xs-8">
@@ -66,7 +66,9 @@
             </div>
         </div>
     <? endforeach; ?>
+    <div class="col-xs-12" style="text-align:center;">
     <? if ($arParams["DISPLAY_BOTTOM_PAGER"]): ?>
-        <p><?= $arResult["NAV_STRING"] ?></p>
+        <?= $arResult["NAV_STRING"] ?>
     <? endif ?>
+    </div>
 </section>

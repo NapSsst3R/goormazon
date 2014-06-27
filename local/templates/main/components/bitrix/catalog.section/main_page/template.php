@@ -17,16 +17,35 @@
 <section class="products clearfix row">
     <? if (!empty($arResult['ITEMS'])) : ?>
         <? foreach ($arResult['ITEMS'] as $k => $arItem): ?>
-            <div class="product col-xs-4">
-                <div class="img col-md-5 col-xs-12"><a href="<?= $arItem['DETAIL_PAGE_URL'] ?>"><img
-                            src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>" alt="name"/></a>
+            <?if($k%$arParams["LINE_ELEMENT_COUNT"] == 0):?>
+                <div class="one-line-elements clearfix">
+            <?endif;?>
+            <div class="product col-xs-3">
+                <div class="img col-xs-12"><a href="<?= $arItem['DETAIL_PAGE_URL'] ?>"><img
+                            src="<?= $arItem['DETAIL_PICTURE']['SRC'] ?>" class="img-responsive" alt="name"/></a>
                 </div>
-                <div class="desc col-md-7 col-xs-12">
+                <div class="desc col-xs-12">
                     <div class="name"><a href="<?= $arItem['DETAIL_PAGE_URL'] ?>"><?= $arItem['NAME'] ?></a></div>
-                    <div class="price"><?= $arItem['MIN_PRICE']['PRINT_DISCOUNT_VALUE'] ?>- <?if($arElement['PRICES']['Старая цена']['VALUE']>0):?><span
-                            class="old_price"><?= $arElement['PRICES']['Старая цена']['PRINT_VALUE'] ?></span><?endif;?></div>
+                    <div class="price"><?= $arItem['MIN_PRICE']['PRINT_DISCOUNT_VALUE'] ?>- <?if($arItem['PRICES']['Старая цена']['VALUE']>0):?><span
+                            class="old_price"><?= $arItem['PRICES']['Старая цена']['PRINT_VALUE'] ?></span><?endif;?></div>
+                    <div class="basket-button">
+                        <a href="<?=$arItem['ADD_URL']?>"><img src="/upload/stat_img/src/buy-button.png"></a>&nbsp;<a href="javascript:;" class="popover-link" data-toggle="popover" data-placement="top" data-content="<?=$arItem['PROPERTIES']['PODAROK_OPISANIE']['VALUE']?>" data-trigger="hover"><img src="/upload/stat_img/src/present-icon.png" /></a>
+                    </div>
                 </div>
             </div>
+            <?$k++;
+            if($k%$arParams["LINE_ELEMENT_COUNT"] == 0):?>
+                </div>
+            <?endif?>
+            <?if($k%$arParams["LINE_ELEMENT_COUNT"] != 0 && $k==count($arResult['ITEMS'])):?>
+                <?while($k%$arParams["LINE_ELEMENT_COUNT"] != 0):?>
+                    <div class="product col-xs-4">&nbsp;</div>
+                    <?$k++;?>
+                <?endwhile;?>
+                <?if($k%$arParams["LINE_ELEMENT_COUNT"] == 0):?>
+                    </div>
+                <?endif;?>
+            <?endif?>
         <? endforeach; ?>
     <? else: ?>
         <?echo '<div class="col-xs-12"><p>В данной категории отсутствуют товары.</p></div>';?>

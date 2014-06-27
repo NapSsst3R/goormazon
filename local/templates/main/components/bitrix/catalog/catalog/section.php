@@ -120,34 +120,21 @@ if ($verticalGrid)
         $component
     );
 ?><?
-    if ($arParams["USE_COMPARE"] == "Y") {
-        ?><?$APPLICATION->IncludeComponent(
-            "bitrix:catalog.compare.list",
-            "",
-            array(
-                "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
-                "IBLOCK_ID"   => $arParams["IBLOCK_ID"],
-                "NAME"        => $arParams["COMPARE_NAME"],
-                "DETAIL_URL"  => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["element"],
-                "COMPARE_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["compare"],
-            ),
-            $component
-        );?><?
-    }
-
     $intSectionID = 0;
 ?>
+    <?//if(!isset($_REQUEST['sort'])){$without_param_sort = true;}?>
+    <?if(!isset($_REQUEST['template'])){$without_param_template = true;}?>
     <div class="param_line clearfix" style="margin:10px 0;">
         <div class="col-xs-6">
             <span>Сортировать по</span>
-            <a href="<?=$APPLICATION->GetCurPageParam('sort=CATALOG_PRICE_1', array('sort'));?>">цене</a>
-            <a href="<?=$APPLICATION->GetCurPageParam('sort=SHOW_COUNTER', array('sort'));?>">популярности</a>
-            <a href="<?=$APPLICATION->GetCurPageParam('sort=NAME', array('sort'));?>">названию</a>
+            <a <?=($_REQUEST['sort']=="CATALOG_PRICE_1"/* || $without_param_sort*/)?'class="active"':"";?> href="<?=$APPLICATION->GetCurPageParam('sort=CATALOG_PRICE_1', array('sort'));?>">цене</a>
+            <a <?=($_REQUEST['sort']=="SHOW_COUNTER")?'class="active"':"";?> href="<?=$APPLICATION->GetCurPageParam('sort=SHOW_COUNTER', array('sort'));?>">популярности</a>
+            <a <?=($_REQUEST['sort']=="NAME")?'class="active"':"";?> href="<?=$APPLICATION->GetCurPageParam('sort=NAME', array('sort'));?>">названию</a>
         </div>
         <div class="col-xs-6" style="text-align:right;">
             <span>Показывать:</span>
-            <a href="<?=$APPLICATION->GetCurPageParam('template=main_page', array('template'));?>">таблицей</a>
-            <a href="<?=$APPLICATION->GetCurPageParam('template=list', array('template'));?>">списком</a>
+            <a <?=($_REQUEST['template']=="table"  || $without_param_template)?'class="active"':"";?> href="<?=$APPLICATION->GetCurPageParam('template=table', array('template'));?>"><span class="glyphicon glyphicon-th-large"></span> <span class="text">таблицей</span></a>
+            <a <?=($_REQUEST['template']=="list")?'class="active"':"";?> href="<?=$APPLICATION->GetCurPageParam('template=list', array('template'));?>"><span class="glyphicon glyphicon-th-list"></span> <span class="text">списком</span></a>
         </div>
     </div>
     <div class="main_content_block clearfix col-xs-12">

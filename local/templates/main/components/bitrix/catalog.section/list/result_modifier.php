@@ -402,4 +402,11 @@
         $arResult['SKU_PROPS'] = $arSKUPropList;
         $arResult['DEFAULT_PICTURE'] = $arEmptyPreview;
     }
+
+    $cp = $this->__component; // объект компонента
+
+    if (is_object($cp))
+    {
+        $cp->SetResultCacheKeys(array('ELEMENTS', 'IBLOCK_ID'));
+    }
 ?>

@@ -46,11 +46,10 @@
             <?endif; ?>
         </div>
         <div class="col-xs-12 fav_izb_block_det">
-            <span class="glyphicon glyphicon-ok square"></span><a  class="fav_izb_link_det"
-                href="<?=$APPLICATION->GetCurPageParam('action=ADD_TO_COMPARE_LIST&id='.$arResult['ID'], array('action', 'id'));?>">Добавить к сравнению</a>
+            <span class="square"></span><a href="<?=$APPLICATION->GetCurPageParam('action=ADD_TO_COMPARE_LIST&id='.$arResult['ID'], array('action', 'id'));?>" data-action="add" data-href="<?=$APPLICATION->GetCurPageParam('action=REMOVE_FROM_COMPARE_LIST&id='.$arResult['ID'], array('action', 'id'));?>" class="fav_izb_link_det compare_send">Добавить к сравнению</a>
         </div>
         <div class="col-xs-12 fav_izb_block_det">
-            <span class="glyphicon glyphicon-ok square"></span><a href="javascript:;" class="fav_izb_link_det">Добавить в избранное</a>
+            <span class="square"></span><a href="/ajax/add_to_fav.php?id=<?=$arResult['ID']?>" data-action="add" class="fav_izb_link_det fav_send">Добавить в избранное</a>
         </div>
     </div>
     <div class="col-md-8 col-lg-8 col-sm-6">

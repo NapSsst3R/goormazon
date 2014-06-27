@@ -2,8 +2,8 @@
 </div>
 <footer class="col-xs-12">
     <div class="sp_central_grid clearfix">
-        <aside class="col-md-3"></aside>
-        <div class="col-md-9">
+        <aside class="col-md-2"></aside>
+        <div class="col-md-10">
             <div class="col-xs-3">
                 <span class="sp_footerblock_heading">О компании </span>
                 <ul class="list-unstyled footerlist">

@@ -142,7 +142,7 @@
     padding-left:15px;
 }
 
-.compare_link a{
+.compare_link input[type=submit], .link_compare{
     background:url(../img/bg/compare.png) no-repeat scroll left center;
     padding-left:15px;
 }
@@ -254,7 +254,7 @@
 }
 
 .ctalog_links li {
-    padding: 12px 15px;
+    padding: 4px 0 3px 15px;
     position:relative;
     background: url(../img/bg/menu_right_arrow.png) no-repeat scroll 95% center;
 }
@@ -420,6 +420,29 @@
 
 .slideshow_main li, .slideshow_main a{
     height:30px;
+}
+
+.param_line a, .param_line span{
+    color:#000;
+    font-size: 11px;
+}
+
+.param_line a.active, .param_line a:hover{
+    color:#209fff;
+    text-decoration: none;
+}
+
+.param_line a span.glyphicon{
+    font-size:12px;
+}
+
+.param_line a.active span.glyphicon, .param_line a:hover span.glyphicon{
+    color:#209fff;
+}
+
+.param_line a.active span.text, .param_line a:hover span.text{
+    text-decoration: underline;
+    color:#209fff;
 }
 
 /* end content main */

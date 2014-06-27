@@ -40,7 +40,7 @@
   margin: 0 10px;
 }
 .ls-responsive .liquid-slider {
-  width: 99%;
+  width: 100%;
   margin: 0;
 }
 .panel-container {
@@ -60,7 +60,7 @@
 
 /*** Panels ***/
 .liquid-slider .panel {  
-  width: 982px;
+  width: 1094px;
   display: block;
   float: left;
   background:none;

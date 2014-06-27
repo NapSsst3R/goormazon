@@ -26,8 +26,9 @@ $APPLICATION->SetTitle("Каталог");
 	"USE_COMPARE" => "Y",
 	"COMPARE_NAME" => "CATALOG_COMPARE_LIST",
 	"COMPARE_FIELD_CODE" => array(
-		0 => "",
-		1 => "",
+		0 => "NAME",
+		1 => "DETAIL_PICTURE",
+		2 => "",
 	),
 	"COMPARE_PROPERTY_CODE" => array(
 		0 => "",
@@ -45,8 +46,8 @@ $APPLICATION->SetTitle("Каталог");
 	"COMPARE_ELEMENT_SORT_ORDER" => "asc",
 	"DISPLAY_ELEMENT_SELECT_BOX" => "N",
 	"PRICE_CODE" => array(
-		0 => "Старая цена",
-		1 => "Розница Интернет-магазин",
+		0 => "Розница Интернет-магазин",
+		1 => "Старая цена",
 	),
 	"USE_PRICE_COUNT" => "N",
 	"SHOW_PRICE_COUNT" => "1",
@@ -65,7 +66,7 @@ $APPLICATION->SetTitle("Каталог");
 	"SECTIONS_VIEW_MODE" => "LIST",
 	"SECTIONS_SHOW_PARENT_NAME" => "Y",
 	"PAGE_ELEMENT_COUNT" => "30",
-	"LINE_ELEMENT_COUNT" => "3",
+	"LINE_ELEMENT_COUNT" => "4",
 	"ELEMENT_SORT_FIELD" => "sort",
 	"ELEMENT_SORT_ORDER" => "asc",
 	"ELEMENT_SORT_FIELD2" => "id",
