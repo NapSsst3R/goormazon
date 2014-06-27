@@ -28,7 +28,7 @@ $APPLICATION->SetTitle("Корзина");
 		"DISPLAY_IMG_WIDTH" => "90",
 		"DISPLAY_IMG_HEIGHT" => "90"
 	)
-);?> <? else:?> <?$APPLICATION->IncludeComponent("bitrix:sale.basket.basket", ".default", array(
+);?> <? else:?> <?$APPLICATION->IncludeComponent("bitrix:sale.basket.basket", "order", array(
 	"COLUMNS_LIST" => array(
 		0 => "NAME",
 		1 => "PROPS",

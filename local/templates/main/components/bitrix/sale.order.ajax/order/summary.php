@@ -35,7 +35,7 @@ $bShowNameWithPicture = ($bDefaultColumns) ? true : false; // flat to show name 
 						</tr>
 						<?
 					}
-					if(!empty($arResult["TAX_LIST"]))
+					if(!empty($arResult["TAX_LIST"]) && false)
 					{
 						foreach($arResult["TAX_LIST"] as $val)
 						{

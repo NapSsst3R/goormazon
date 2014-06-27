@@ -964,8 +964,8 @@ function showBasketItemsList(val)
 }
 
 $(document).ready(function () {
-    $('.main_content section').addClass('col-md-12').removeClass('col-md-9');
-    $('.bx_breadcrumbs').addClass('col-md-9');
+    $('.main_content section').addClass('col-md-12').removeClass('col-md-10');
+    $('.bx_breadcrumbs').addClass('col-md-10');
     breadcrumbs = $('.bx_breadcrumbs').detach();
     $('.main_content aside').after(breadcrumbs);
     $('#collapse_block').removeClass('collapse').removeClass('navbar-collapse');
