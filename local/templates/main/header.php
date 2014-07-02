@@ -113,11 +113,11 @@
     </div>
 
     <div class="middle_header border_dotted_bottom clearfix col-xs-12">
-        <div class="logo col-md-3">
+        <div class="logo col-md-2">
             <a href="<?= SITE_DIR ?>"><img style="width: 185px;" src="/upload/stat_img/src/logo.png"
                                            alt="Goormazon"></a>
         </div>
-        <div class="col-md-9 right_padd_zero left_padd_zero">
+        <div class="col-md-10 right_padd_zero left_padd_zero">
             <div class="col-xs-5 search_cityes">
                 <div class="cities_block col-xs-12 left_padd_zero">
                     <div class="cities_block col-xs-3 left_padd_zero"><a href="javascript:;">Москва</a></div>
@@ -165,7 +165,7 @@
                 </div>
             </div>
             <div class="banner col-xs-5 visible-md visible-lg">
-                <a href="javascript:;"><img src="/upload/stat_img/src/baner_near_cart.png" alt=""/></a>
+                <?$APPLICATION->IncludeFile('/inc/baner_header.php', array(), array('MODE'=>'html'));?>
             </div>
             <div class="col-xs-2 right_padd_zero">
                 <div class="basket">

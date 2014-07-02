@@ -81,7 +81,9 @@ else
 	ShowError($arResult["ERROR_MESSAGE"]);
 }
 ?>
-<?$APPLICATION->IncludeComponent("bitrix:sale.order.ajax", "order", array(
+<?
+    if($normalCount>0):
+    $APPLICATION->IncludeComponent("bitrix:sale.order.ajax", "order", array(
 	"PAY_FROM_ACCOUNT" => "N",
 	"ONLY_FULL_PAY_FROM_ACCOUNT" => "N",
 	"COUNT_DELIVERY_TAX" => "N",
@@ -107,4 +109,6 @@ else
 	)
 	),
 	false
-);?>
+);
+    endif;
+?>

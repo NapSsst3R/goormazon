@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Корзина");
-?> <? if($_REQUEST['ORDER_ID']>0):?>
+?> <? if($_GET['ORDER_ID']>0):?>
     <?$APPLICATION->IncludeComponent(
 	"bitrix:sale.order.ajax",
 	"order",

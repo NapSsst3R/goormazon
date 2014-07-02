@@ -41,9 +41,9 @@
             </div>
             <div class="product_info_line col-lg-7 col-md-9 col-sm-9 col-xs-8">
                 <a class="name_link_list" href="<?=$arElement['DETAIL_PAGE_URL']?>"><?=$arElement['NAME']?></a><br />
-                <?if($arElement['PROPERTIES']['PODAROK_OPISANIE']['VALUE']):?>
-                <a href="javascript:;" class="popover-link" data-toggle="popover" data-placement="top" data-content="<?=$arElement['PROPERTIES']['PODAROK_OPISANIE']['VALUE']?>" data-trigger="hover">
-                    <img src="/upload/stat_img/src/present-icon.png" /></a><br />
+                <?if($arElement['PROPERTIES']['PODAROK_OPISANIE']['VALUE']!=""):?>
+                    <a href="javascript:;">
+                    <img src="/upload/stat_img/src/present-icon.png" /></a> <?=$arResult['PRESENTS'][$arElement['PROPERTIES']['PODAROK_OPISANIE']['VALUE']]?>
                 <?endif;?>
                 <?=$arElement['PROPERTIES']['OPISANIE_DLYA_ANONSA']['~VALUE']?>
                 <?if($arElement['PROPERTIES']['NALICHIE']['VALUE']=='Нет'):?>

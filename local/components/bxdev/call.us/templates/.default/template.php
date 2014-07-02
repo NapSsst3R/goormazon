@@ -11,12 +11,12 @@ if(!empty($arResult['ERROR_MESSAGE']) && is_array($arResult['ERROR_MESSAGE'])){
 ?>
 	<form method="GET" action="<?=$APPLICATION->GetCurPage()?>" id="form_call_us">
 	<?=bitrix_sessid_post()?>
-		<input type="text" name="PHONE" value="" placeholder="+7 495 780 98 98" />
+		<input type="text" name="PHONE" style="width:175px;" value="" placeholder="+7 495 780 98 98" />
 		<input type="hidden" name="PARAMS_HASH" value="<?=$arResult["PARAMS_HASH"]?>">
 		<input type="hidden" name="EMAIL_SEND" value="<?=$arResult["EMAIL"]?>">
 		<input type="hidden" name="page_SEND" value="<?=$_REQUEST['page']?>">
 		<input type="hidden" name="mode" value="ajax">
-		<input type="submit" class="button" name="submit" value="Отправить" />
+		<input type="submit" class="btn btn-default" name="submit" value="Отправить" />
 	</form>
 <?if(empty($arResult['ERROR_MESSAGE']) && !strlen($arResult['OK_MESSAGE'])){?>
 	<p>Напишите свой телефон и нажмите "Отправить". <br />Наш менеджер свяжется с Вами в ближайшее время!</p>

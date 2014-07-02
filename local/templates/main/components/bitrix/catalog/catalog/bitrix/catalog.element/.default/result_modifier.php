@@ -474,4 +474,9 @@ if (!empty($arResult['DISPLAY_PROPERTIES']))
 
 $arResult['SKU_PROPS'] = $arSKUPropList;
 $arResult['DEFAULT_PICTURE'] = $arEmptyPreview;
+
+    $rs = CIBLockElement::GetList(array(), array('IBLOCK_ID'=>9), false, false, array('PREVIEW_TEXT', 'NAME'));
+    while($arPresent = $rs->GetNext()){
+        $arResult['PRESENTS'][$arPresent['NAME']] = $arPresent['~PREVIEW_TEXT'];
+    }
 ?>

@@ -5,48 +5,81 @@
         <aside class="col-md-2"></aside>
         <div class="col-md-10">
             <div class="col-xs-3">
-                <span class="sp_footerblock_heading">О компании </span>
-                <ul class="list-unstyled footerlist">
-                    <li><a href="/contacts/">Контакты</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                </ul>
+                <span class="sp_footerblock_heading">О КОМПАНИИ</span>
+                <?$APPLICATION->IncludeComponent("bitrix:menu", "footer_menu", Array(
+	"ROOT_MENU_TYPE" => "bottom-1",	// Тип меню для первого уровня
+	"MENU_CACHE_TYPE" => "A",	// Тип кеширования
+	"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+	"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+	"MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+	"MAX_LEVEL" => "1",	// Уровень вложенности меню
+	"CHILD_MENU_TYPE" => "bottom-1",	// Тип меню для остальных уровней
+	"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+	"DELAY" => "N",	// Откладывать выполнение шаблона меню
+	"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+	),
+	false
+);?>
             </div>
             <div class="col-xs-3">
-                <span class="sp_footerblock_heading">О компании </span>
-                <ul class="list-unstyled footerlist">
-                    <li><a href="/contacts/">Контакты</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                </ul>
+                <span class="sp_footerblock_heading">ПОМОЩЬ</span>
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:menu",
+                    "footer_menu",
+                    array(
+                        "ROOT_MENU_TYPE"        => "bottom-2",
+                        "MENU_CACHE_TYPE"       => "A",
+                        "MENU_CACHE_TIME"       => "3600",
+                        "MENU_CACHE_USE_GROUPS" => "Y",
+                        "MENU_CACHE_GET_VARS"   => array(),
+                        "MAX_LEVEL"             => "1",
+                        "CHILD_MENU_TYPE"       => "bottom-2",
+                        "USE_EXT"               => "N",
+                        "DELAY"                 => "N",
+                        "ALLOW_MULTI_SELECT"    => "N"
+                    ),
+                    false
+                );?>
             </div>
             <div class="col-xs-3">
-                <span class="sp_footerblock_heading">О компании </span>
-                <ul class="list-unstyled footerlist">
-                    <li><a href="/contacts/">Контакты</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                </ul>
+                <span class="sp_footerblock_heading">ЛИЧНЫЙ КАБИНЕТ</span>
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:menu",
+                    "footer_menu",
+                    array(
+                        "ROOT_MENU_TYPE"        => "bottom-3",
+                        "MENU_CACHE_TYPE"       => "A",
+                        "MENU_CACHE_TIME"       => "3600",
+                        "MENU_CACHE_USE_GROUPS" => "Y",
+                        "MENU_CACHE_GET_VARS"   => array(),
+                        "MAX_LEVEL"             => "1",
+                        "CHILD_MENU_TYPE"       => "bottom-3",
+                        "USE_EXT"               => "N",
+                        "DELAY"                 => "N",
+                        "ALLOW_MULTI_SELECT"    => "N"
+                    ),
+                    false
+                );?>
             </div>
             <div class="col-xs-3">
-                <span class="sp_footerblock_heading">О компании </span>
-                <ul class="list-unstyled footerlist">
-                    <li><a href="/contacts/">Контакты</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                </ul>
+                <span class="sp_footerblock_heading">УСЛОВИЯ СОТРУДНИЧЕСТВА</span>
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:menu",
+                    "footer_menu",
+                    array(
+                        "ROOT_MENU_TYPE"        => "bottom-4",
+                        "MENU_CACHE_TYPE"       => "A",
+                        "MENU_CACHE_TIME"       => "3600",
+                        "MENU_CACHE_USE_GROUPS" => "Y",
+                        "MENU_CACHE_GET_VARS"   => array(),
+                        "MAX_LEVEL"             => "1",
+                        "CHILD_MENU_TYPE"       => "bottom-4",
+                        "USE_EXT"               => "N",
+                        "DELAY"                 => "N",
+                        "ALLOW_MULTI_SELECT"    => "N"
+                    ),
+                    false
+                );?>
             </div>
         </div>
     </div>

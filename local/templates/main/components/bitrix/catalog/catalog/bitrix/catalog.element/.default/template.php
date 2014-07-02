@@ -106,20 +106,20 @@
             <? endif; ?>
             <div class="col-md-12 left_padd_zero padding_class_top"><a class="orange-text" href="#FastOrder" data-toggle="modal">Заказать в один клик</a> <a
                     href="javascript:;"
-                    class="popover-link"
+                    class="popover-hover"
                     data-toggle="popover" data-placement="top" data-content="Вы можете заказать в один клик, это очень просто!"
                     data-trigger="hover"
                     ><img src="/upload/stat_img/src/question.png"/></a></div>
             <div class="col-md-12 left_padd_zero padding_class_top"><a class="call-me"  href="#callMe" data-toggle="modal">Перезвоните мне</a> <a
                     href="javascript:;"
-                    class="popover-link"
+                    class="popover-hover"
                     data-toggle="popover" data-placement="top" data-content="Оставьте заявку и наш оператор обязательно с вами свяжется"
                     data-trigger="hover"
                     ><img src="/upload/stat_img/src/question.png"/></a></div>
             <div class="col-md-12 left_padd_zero padding_class_top">S-бонусов 300 руб.</div>
             <div class="col-md-12 left_padd_zero padding_class_top"><a href="#FoundCheaper" data-toggle="modal">Нашли дешевле</a> <a
                     href="javascript:;"
-                    class="popover-link"
+                    class="popover-hover"
                     data-toggle="popover" data-placement="top" data-content="что писать??"
                     data-trigger="hover"
                     ><img src="/upload/stat_img/src/question.png"/></a></div>
@@ -132,10 +132,24 @@
         </div>
         <div class="col-md-6 col-xs-12">
             <div class="col-xs-12">
-                Доставка
+                <div class="cities_block col-xs-4 left_padd_zero">Город: <a href="javascript:;">Москва</a></div>
+                <div class="phone col-xs-8 left_padd_zero">(495) 646-09-83</div>
+                <br />
+                <br />
+                <div class="desc_deliv"></div>
             </div>
             <div class="col-xs-12">
-                информация
+                <br />
+                <br />
+                <div class="info_additional">
+                    <?if($arResult['PROPERTIES']['OFITSIALNYY_DILER']['VALUE']=="да" || $arResult['PROPERTIES']['OFITSIALNYY_DILER']['VALUE']=="Да"):?>
+                        <p>&nbsp;&nbsp;<img src="/upload/stat_img/src/diller.png" /> Официальный диллер</p>
+                    <?endif;?>
+                    <?if($arResult['PROPERTIES']['GARANTIYA_KACHESTVA']['VALUE']!=""):?>
+                        <p>&nbsp;&nbsp;<img src="/upload/stat_img/src/big-finger.png" /> Гарантия качества <?=$arResult['PROPERTIES']['GARANTIYA_KACHESTVA']['VALUE']?> года</p>
+                    <?endif;?>
+                    <p><a href="javascript:;"><img src="/upload/stat_img/src/present-icon.png" /> </a><?=$arResult['PRESENTS'][$arResult['PROPERTIES']['PODAROK_OPISANIE']['VALUE']]?></p>
+                </div>
             </div>
         </div>
     </div>

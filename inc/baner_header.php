@@ -1,0 +1,1 @@
+<a href="javascript:;"><img src="/upload/stat_img/src/baner_near_cart.png" alt=""/></a>

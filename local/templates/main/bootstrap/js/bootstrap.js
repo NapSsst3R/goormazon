@@ -1982,6 +1982,16 @@ $(document).ready(function(){
         return false;
     });
 
-    $('.popover-link').popover();
+    $('.popover-link').popover({html:true, trigger:'click'});
+    $('.popover-hover').popover({html:true, trigger:'hover'});
+
+    if($(".desc_deliv").length){
+        city = $('.span_txt').text();
+        $('#city_to').val(city);
+        $.get('/ajax/delivery.php?'+$('#mlsp_del').serialize(), {}, function(data){
+            $('.desc_deliv').html(data);
+//					mswidget.currentCity = city;
+        });
+    };
 
 });

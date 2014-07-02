@@ -218,7 +218,6 @@
 
 .menu_head a{
     color:#ffffff;
-    text-transform:uppercase;
 }
 
 .navbar-default{
@@ -278,7 +277,10 @@
 .ctalog_links a{
     color:#000000;
     font-size:13px;
-    text-transform:uppercase;
+}
+
+.ctalog_links a:hover{
+    color:#e47911;
 }
 
 .ctalog_links li:hover .sub_levels{
@@ -355,6 +357,25 @@
             box-shadow: 1px 1px 15px #f4f3f3;
 }
 
+.main_page.products .product:hover .show_hover{
+    border:1px solid #d2d2d2;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius:3px;
+    padding:5px;
+    -webkit-box-shadow: 1px -1px 2px #d2d2d2;
+    -moz-box-shadow: 1px -1px 2px #d2d2d2;
+    box-shadow: 1px -1px 2px #d2d2d2;
+}
+
+.main_page.products .product .basket-button{
+    display: none;
+}
+
+.main_page.products .product:hover .basket-button{
+    display: block;
+}
+
 .products{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -362,7 +383,7 @@
 
 .product {
     padding-bottom:20px;
-    padding-right:0;
+    padding-right:5px;
 }
 
 .product .desc{
@@ -378,6 +399,17 @@
     font-family:Open Sans;
     font-size:13px;
     text-decoration:line-through;
+}
+
+.product .name a{
+    font-size:12px;
+    text-decoration: underline;
+    color:#1e3274;
+}
+
+.product .name a:hover{
+    text-decoration: none;
+    color:#1e3274;
 }
 
 #main-slider-nav-ul, #main-slider .title, .ls-nav{
@@ -621,3 +653,20 @@ footer a {
 }
 
 /* end footer */
+
+
+
+/* delivery block */
+
+.desc_deliv{
+    color:#000;
+    font-size:13px;
+    font-family: "Open Sans";
+}
+
+.desc_deliv .deliv-name {
+    color:#1a5aa9;
+    text-decoration: underline;
+}
+
+/* endf delivery block */
