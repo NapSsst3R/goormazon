@@ -24,8 +24,8 @@ require_once('inc/index_include.php');
 	"INCLUDE_SUBSECTIONS" => "Y",
 	"SHOW_ALL_WO_SECTION" => "Y",
 	"HIDE_NOT_AVAILABLE" => "N",
-	"PAGE_ELEMENT_COUNT" => "6",
-	"LINE_ELEMENT_COUNT" => "3",
+	"PAGE_ELEMENT_COUNT" => "8",
+	"LINE_ELEMENT_COUNT" => "4",
 	"PROPERTY_CODE" => array(
 		0 => "",
 		1 => "",
@@ -126,8 +126,8 @@ require_once('inc/index_include.php');
 	"INCLUDE_SUBSECTIONS" => "Y",
 	"SHOW_ALL_WO_SECTION" => "Y",
 	"HIDE_NOT_AVAILABLE" => "N",
-	"PAGE_ELEMENT_COUNT" => "6",
-	"LINE_ELEMENT_COUNT" => "3",
+	"PAGE_ELEMENT_COUNT" => "8",
+	"LINE_ELEMENT_COUNT" => "4",
 	"PROPERTY_CODE" => array(
 		0 => "",
 		1 => "",

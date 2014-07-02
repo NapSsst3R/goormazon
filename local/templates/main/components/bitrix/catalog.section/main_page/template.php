@@ -20,15 +20,15 @@
             <?if($k%$arParams["LINE_ELEMENT_COUNT"] == 0):?>
                 <div class="one-line-elements clearfix">
             <?endif;?>
-            <div class="product col-xs-4">
+            <div class="product col-xs-3">
                 <div class="show_hover clearfix">
                     <?if(!empty($arItem['DETAIL_PICTURE'])){
-                       $ArPic = CFile::ResizeImageGet($arItem['DETAIL_PICTURE'], array('width'=>100, 'height'=>100), BX_RESIZE_IMAGE_EXACT);
+                       $ArPic = CFile::ResizeImageGet($arItem['DETAIL_PICTURE'], array('width'=>200, 'height'=>200), BX_RESIZE_IMAGE_EXACT);
                     }?>
-                    <div class="img col-xs-12 col-md-5"><a href="<?= $arItem['DETAIL_PAGE_URL'] ?>"><img
+                    <div class="img col-xs-12 text-center"><a href="<?= $arItem['DETAIL_PAGE_URL'] ?>"><img
                                 src="<?= $ArPic['src'] ?>" class="img-responsive" alt="name"/></a>
                     </div>
-                    <div class="desc col-xs-12 col-md-7">
+                    <div class="desc col-xs-12">
                         <div class="name"><a href="<?= $arItem['DETAIL_PAGE_URL'] ?>"><?= $arItem['NAME'] ?></a></div>
                         <div class="price"><?= $arItem['MIN_PRICE']['PRINT_DISCOUNT_VALUE'] ?>- <?if($arItem['PRICES']['Старая цена']['VALUE']>0):?><span
                                 class="old_price"><?= $arItem['PRICES']['Старая цена']['PRINT_VALUE'] ?></span><?endif;?></div>
@@ -44,7 +44,7 @@
             <?endif?>
             <?if($k%$arParams["LINE_ELEMENT_COUNT"] != 0 && $k==count($arResult['ITEMS'])):?>
                 <?while($k%$arParams["LINE_ELEMENT_COUNT"] != 0):?>
-                    <div class="product col-xs-4">&nbsp;</div>
+                    <div class="product col-xs-3">&nbsp;</div>
                     <?$k++;?>
                 <?endwhile;?>
                 <?if($k%$arParams["LINE_ELEMENT_COUNT"] == 0):?>
