@@ -1,0 +1,29 @@
+.wrap-slider{
+    position:relative;
+}
+
+.links-slider{
+    position:absolute;
+    bottom: 30px;
+    left:50%;
+}
+
+.slideshow_main{
+    margin-bottom: 0;
+}
+
+.slideshow_main li {
+    width:18px;
+    height:14px;
+}
+
+a.bullets_liquid{
+    width:14px;
+    height:14px;
+    background:url(images/bullets.png) scroll bottom center no-repeat;
+    display: block;
+}
+
+a.bullets_liquid.currentCrossLink, a.bullets_liquid:hover{
+    background:url(images/bullets.png) scroll top center no-repeat;
+}

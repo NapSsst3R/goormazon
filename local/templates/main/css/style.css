@@ -407,6 +407,10 @@ aside .navbar{
     display: block;
 }
 
+.main_page .product .img img{
+    margin:0 auto;
+}
+
 .products{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -450,39 +454,6 @@ aside .navbar{
 
 .main-slider-panel{
     margin-bottom:0;
-}
-
-.links-slider ul{
-    margin-bottom:0;
-}
-
-.links-slider a{
-    color:#000000;
-    font-family:Open Sans Light;
-    font-size:11px;
-}
-
-.links-slider a:hover, .links-slider a:focus, .links-slider a:active{
-    text-decoration:none;
-}
-
-.currentCrossLink:before {
-    content: "";
-    width: 100%;
-    height: 10px;
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    background: url('../img/bg/strelka_baner.png') no-repeat scroll bottom center;
-    z-index:1;
-}
-
-.slideshow_main{
-    margin-top:10px;
-}
-
-.slideshow_main li, .slideshow_main a{
-    height:30px;
 }
 
 .param_line a, .param_line span{
