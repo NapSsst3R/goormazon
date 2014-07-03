@@ -38,7 +38,7 @@
 <? $APPLICATION->ShowPanel(); ?>
 <div class="header clearfix">
     <div class="top_line clearfix border_dotted_bottom container col-xs-12">
-        <nav class="col-xs-6 visible-md visible-lg">
+        <nav class="col-md-6 visible-md visible-lg">
             <?$APPLICATION->IncludeComponent(
                 "bitrix:menu",
                 "top",
@@ -57,7 +57,7 @@
                 false
             );?>
         </nav>
-        <nav class="col-xs-3 visible-md visible-lg">
+        <nav class="col-md-3 visible-md visible-lg">
             <ul class="list-unstyled floatlist">
                 <li class="favorite_link"><a href="/personal/favorite/">Избранное</a></li>
                 <li class="compare_link">
@@ -93,13 +93,13 @@
                 </li>
             </ul>
         </nav>
-        <nav class="col-xs-9 visible-sm visible-xs right_padd_zero">
+        <nav class="col-xs-7 text-right visible-sm visible-xs right_padd_zero">
             <ul class="list-unstyled floatlist ">
                 <li><a href="">Контакты</a></li>
                 <li><a href="">Адреса магазинов</a></li>
             </ul>
         </nav>
-        <nav class="col-xs-3 right_padd_zero">
+        <nav class="col-md-3 col-xs-5 right_padd_zero">
             <ul class="fright list-unstyled floatlist">
                 <? if ($USER->IsAuthorized()): ?>
                     <li class="register_link"><a href="/personal/">Личный кабинет</a></li>
@@ -113,13 +113,49 @@
     </div>
 
     <div class="middle_header border_dotted_bottom clearfix col-xs-12">
-        <div class="logo col-md-2">
-            <a href="<?= SITE_DIR ?>"><img style="width: 185px;" src="/upload/stat_img/src/logo.png"
+        <div class="logo col-xs-5 col-sm-5 col-md-3 col-lg-2 left_padd_zero">
+            <a href="<?= SITE_DIR ?>"><img class="img-responsive" src="/upload/stat_img/src/logo.png"
                                            alt="Goormazon"></a>
+            <div class="search_block col-xs-12 left_padd_zero visible-sm visible-xs">
+                <?
+                    $APPLICATION->IncludeComponent(
+                        "bitrix:search.title",
+                        "search_title",
+                        Array(
+                            "NUM_CATEGORIES"     => "1",
+                            // Количество категорий поиска
+                            "TOP_COUNT"          => "5",
+                            // Количество результатов в каждой категории
+                            "ORDER"              => "date",
+                            // Сортировка результатов
+                            "USE_LANGUAGE_GUESS" => "Y",
+                            // Включить автоопределение раскладки клавиатуры
+                            "CHECK_DATES"        => "N",
+                            // Искать только в активных по дате документах
+                            "SHOW_OTHERS"        => "N",
+                            // Показывать категорию "прочее"
+                            "PAGE"               => "#SITE_DIR#search/",
+                            // Страница выдачи результатов поиска (доступен макрос #SITE_DIR#)
+                            "CATEGORY_0_TITLE"   => "Найдено",
+                            // Название категории
+                            "CATEGORY_0"         => array( // Ограничение области поиска
+                                0 => "no",
+                            ),
+                            "SHOW_INPUT"         => "Y",
+                            // Показывать форму ввода поискового запроса
+                            "INPUT_ID"           => "title-search-input",
+                            // ID строки ввода поискового запроса
+                            "CONTAINER_ID"       => "title-search",
+                            // ID контейнера, по ширине которого будут выводиться результаты
+                        ),
+                        false
+                    );
+                ?>
+            </div>
         </div>
-        <div class="col-md-10 right_padd_zero left_padd_zero">
-            <div class="col-xs-5 search_cityes">
-                <div class="cities_block col-xs-12 left_padd_zero">
+        <div class="col-xs-7 col-sm-7 col-md-9 col-lg-10 right_padd_zero left_padd_zero">
+            <div class="col-xs-9 col-md-5 col-lg-5 search_cityes">
+                <div class="cities_block col-md-12 left_padd_zero clearfix">
                     <div class="cities_block col-xs-3 left_padd_zero"><a href="javascript:;">Москва</a></div>
                     <div class="phone col-xs-9 left_padd_zero"><? $APPLICATION->IncludeFile(
                             '/inc/phone.php',
@@ -127,7 +163,7 @@
                             array('MODE' => 'html')
                         ) ?></div>
                 </div>
-                <div class="search_block col-xs-12 left_padd_zero">
+                <div class="search_block col-md-12 left_padd_zero visible-md visible-lg">
                     <?
                         $APPLICATION->IncludeComponent(
                             "bitrix:search.title",
@@ -164,10 +200,10 @@
                     ?>
                 </div>
             </div>
-            <div class="banner col-xs-5 visible-md visible-lg">
+            <div class="banner col-md-5 col-lg-5 visible-md visible-lg">
                 <?$APPLICATION->IncludeFile('/inc/baner_header.php', array(), array('MODE'=>'html'));?>
             </div>
-            <div class="col-xs-2 right_padd_zero">
+            <div class="col-xs-3 col-md-2 col-lg-2 right_padd_zero">
                 <div class="basket">
                     <?$APPLICATION->IncludeComponent(
                         "bitrix:sale.basket.basket.small",
@@ -187,7 +223,7 @@
     </div>
 </div>
 <div class="main_content clearfix">
-    <aside class="col-md-2">
+    <aside class="col-md-3 col-lg-2">
         <nav role="navigation" class="navbar navbar-default product_detail_menu_show">
             <?$APPLICATION->IncludeComponent(
                 "bitrix:menu",
@@ -222,7 +258,7 @@
             <a href="javascript:;" class="orange">Подробнее</a>
         </div>
     </aside>
-    <section class="col-md-10">
+    <section class="col-md-9 col-lg-10">
         <? if ($APPLICATION->GetCurDir() == SITE_DIR): ?>
             <?$APPLICATION->IncludeComponent(
                 "bitrix:news.list",

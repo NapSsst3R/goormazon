@@ -54,6 +54,10 @@
 
 /* common styles */
 
+body{
+    min-width: 640px;
+}
+
 .fleft {
     float:left;
 }
@@ -153,7 +157,16 @@
 /* middle header line */
 
 .logo{
-    padding:25px 15px 25px 10px;
+    padding-top:25px;
+    padding-bottom:25px;
+}
+
+.logo img{
+    max-width: 95%;
+}
+
+.logo .search_block{
+    margin-top:10px;
 }
 
 .search_cityes{
@@ -168,7 +181,7 @@
 
 .search_block input[type="text"]{
     color:#dddddd;
-    width:200px;
+    width:90%;
     height:22px;
 }
 
@@ -184,6 +197,20 @@
 
 .middle_header .banner{
     text-align:right;
+}
+
+@media (max-width: 992px){
+    .search_cityes{
+        padding-top:80px;
+    }
+
+    .header .basket{
+        padding-bottom:35px;
+    }
+
+    .logo{
+        padding-bottom:0px;
+    }
 }
 
 .product_count{
@@ -213,11 +240,15 @@
 
 .menu_head{
     background: url(../img/bg/menu_down_arrow.png) no-repeat scroll 95% center #4c4c4c;
-    padding: 15px 15px;
+    padding: 10px 15px;
 }
 
 .menu_head a{
     color:#ffffff;
+}
+
+aside .navbar{
+    min-height: 40px;
 }
 
 .navbar-default{

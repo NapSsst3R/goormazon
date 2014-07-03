@@ -20,7 +20,7 @@
             <?if($k%$arParams["LINE_ELEMENT_COUNT"] == 0):?>
                 <div class="one-line-elements clearfix">
             <?endif;?>
-            <div class="product col-xs-3">
+            <div class="product col-xs-4 col-sm-3 col-md-3 col-lg-2<?=($k%5==0)?' hidden-xs hidden-sm hidden-md':''?><?=($k%4==0)?' hidden-xs':''?>">
                 <div class="show_hover clearfix">
                     <?if(!empty($arItem['DETAIL_PICTURE'])){
                        $ArPic = CFile::ResizeImageGet($arItem['DETAIL_PICTURE'], array('width'=>200, 'height'=>200), BX_RESIZE_IMAGE_EXACT);
@@ -44,7 +44,7 @@
             <?endif?>
             <?if($k%$arParams["LINE_ELEMENT_COUNT"] != 0 && $k==count($arResult['ITEMS'])):?>
                 <?while($k%$arParams["LINE_ELEMENT_COUNT"] != 0):?>
-                    <div class="product col-xs-3">&nbsp;</div>
+                    <div class="product col-xs-4 col-sm-3 col-md-3 col-lg-2<?=($k%5==0)?' hidden-xs hidden-sm hidden-md':''?><?=($k%4==0)?' hidden-xs':''?>">&nbsp;</div>
                     <?$k++;?>
                 <?endwhile;?>
                 <?if($k%$arParams["LINE_ELEMENT_COUNT"] == 0):?>
