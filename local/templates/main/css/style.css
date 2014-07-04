@@ -54,9 +54,9 @@
 
 /* common styles */
 
-body{
-    min-width: 640px;
-}
+/*body{*/
+    /*min-width: 640px;*/
+/*}*/
 
 .fleft {
     float:left;
@@ -240,15 +240,16 @@ body{
 
 .menu_head{
     background: url(../img/bg/menu_down_arrow.png) no-repeat scroll 95% center #4c4c4c;
-    padding: 10px 15px;
+    padding: 5px 15px;
 }
 
 .menu_head a{
     color:#ffffff;
+    font-size:12px;
 }
 
 aside .navbar{
-    min-height: 40px;
+    min-height: 27px;
 }
 
 .navbar-default{
