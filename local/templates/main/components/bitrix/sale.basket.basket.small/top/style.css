@@ -1,4 +1,4 @@
-.basket_counter{
+.basket{
     position:relative;
 }
 
@@ -6,8 +6,8 @@
     position:absolute;
     display:none;
     width: 255px;
-    margin-left: -120px;
-    margin-top: 35px;
+    top: 100%;
+    right: 0;
     background: #ffffff;
     border: 1px solid #000000;
     z-index: 1;

@@ -17,10 +17,10 @@
 <section class="products clearfix row main_page">
     <? if (!empty($arResult['ITEMS'])) : ?>
         <? foreach ($arResult['ITEMS'] as $k => $arItem): ?>
-            <?if($k%$arParams["LINE_ELEMENT_COUNT"] == 0):?>
+            <?if($k%6 == 0):?>
                 <div class="one-line-elements clearfix">
             <?endif;?>
-            <div class="product col-xs-4 col-sm-3 col-md-3 col-lg-2<?=($k%5==0)?' hidden-xs hidden-sm hidden-md':''?><?=($k%4==0)?' hidden-xs':''?>">
+            <div class="product col-xs-4 col-sm-3 col-md-3 col-lg-2<?=($k%5==0 || $k%6==0)?' hidden-xs hidden-sm hidden-md':''?><?=($k%4==0)?' hidden-xs':''?>">
                 <div class="show_hover clearfix">
                     <?if(!empty($arItem['DETAIL_PICTURE'])){
                        $ArPic = CFile::ResizeImageGet($arItem['DETAIL_PICTURE'], array('width'=>200, 'height'=>200), BX_RESIZE_IMAGE_EXACT);
@@ -39,15 +39,15 @@
                 </div>
             </div>
             <?$k++;
-            if($k%$arParams["LINE_ELEMENT_COUNT"] == 0):?>
+            if($k%6 == 0):?>
                 </div>
             <?endif?>
-            <?if($k%$arParams["LINE_ELEMENT_COUNT"] != 0 && $k==count($arResult['ITEMS'])):?>
-                <?while($k%$arParams["LINE_ELEMENT_COUNT"] != 0):?>
-                    <div class="product col-xs-4 col-sm-3 col-md-3 col-lg-2<?=($k%5==0)?' hidden-xs hidden-sm hidden-md':''?><?=($k%4==0)?' hidden-xs':''?>">&nbsp;</div>
+            <?if($k%6 != 0 && $k==count($arResult['ITEMS'])):?>
+                <?while($k%6 != 0):?>
+                    <div class="product col-xs-4 col-sm-3 col-md-3 col-lg-2<?=($k%5==0 || $k%6==0)?' hidden-xs hidden-sm hidden-md':''?><?=($k%4==0)?' hidden-xs':''?>">&nbsp;</div>
                     <?$k++;?>
                 <?endwhile;?>
-                <?if($k%$arParams["LINE_ELEMENT_COUNT"] == 0):?>
+                <?if($k%6 == 0):?>
                     </div>
                 <?endif;?>
             <?endif?>
