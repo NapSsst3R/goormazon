@@ -1,5 +1,9 @@
-/*@media (min-width: 1200px){*/
-    /*.main_page.products .col-lg-2{*/
-        /*width:19.666667%;*/
-    /*}*/
-/*}*/
+@media (max-width: 520px){
+    .main_page.products .col-xs-4{
+        width:50%;
+    }
+
+    .one-line-elements{
+        display:none;
+    }
+}

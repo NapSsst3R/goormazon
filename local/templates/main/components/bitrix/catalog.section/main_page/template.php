@@ -17,7 +17,7 @@
 <section class="products clearfix row main_page">
     <? if (!empty($arResult['ITEMS'])) : ?>
         <? foreach ($arResult['ITEMS'] as $k => $arItem): ?>
-            <?if($k%6 == 0):?>
+            <?if($k%6 == 0 && false):?>
                 <div class="one-line-elements clearfix">
             <?endif;?>
             <div class="product col-xs-4 col-sm-3 col-md-3 col-lg-2<?=($k%5==0 || $k%6==0)?' hidden-xs hidden-sm hidden-md':''?><?=($k%4==0)?' hidden-xs':''?>">
@@ -38,18 +38,16 @@
                     </div>
                 </div>
             </div>
-            <?$k++;
-            if($k%6 == 0):?>
-                </div>
-            <?endif?>
             <?if($k%6 != 0 && $k==count($arResult['ITEMS'])):?>
                 <?while($k%6 != 0):?>
                     <div class="product col-xs-4 col-sm-3 col-md-3 col-lg-2<?=($k%5==0 || $k%6==0)?' hidden-xs hidden-sm hidden-md':''?><?=($k%4==0)?' hidden-xs':''?>">&nbsp;</div>
                     <?$k++;?>
                 <?endwhile;?>
-                <?if($k%6 == 0):?>
-                    </div>
-                <?endif;?>
+            <?else:?>
+                <?$k++;?>
+            <?endif;?>
+            <?if($k%6 == 0 && $k!=0):?>
+                <div class="one-line-elements clearfix"></div>
             <?endif?>
         <? endforeach; ?>
     <? else: ?>
